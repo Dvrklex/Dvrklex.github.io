@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&family=Padauk&family=Pragati+Narrow&display=swap');
+:root {
+    --font1:'Cantarell', sans-serif;
+    --font2: 'Pragati Narrow', sans-serif;
+    --font3:'Padauk', sans-serif;
+    --font-white: rgb(255, 255, 255);
+}
+.items-background-container{
+    padding: 2%;
+    position: relative;
+    display: grid;
+    place-items: center;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: auto;
+    width: 120vh;
+    margin: auto;
+    background-color: rgba(0, 0, 0, 0.788);
+}
+
+
+
+.about-me {
+    margin: auto;
+    padding: 2%;
+    
+    
+}
+.img-profile img{
+    width: 200px;
+    height: 200px;
+    padding: 2%;
+    border-radius: 150px;
+    border: 1px solid rgb(87, 0, 0);
+    box-shadow: 0 0 15px 0 rgb(87, 0, 0);
+} 
+
+
+
+.container-name{
+    justify-content: center;
+    display: grid;
+    color: var(--font-white);
+    font-family: var(--font1);
+}
+.my-description{
+    color: var(--font-white);
+    font-family: var(--font2);
+    font-size: 18px;
+    text-align: center;
+    padding: 2%;
+    width: 70%;
+    margin: auto;
+}
+
+
+
+.card-container{   
+    width: 100vh; 
+    display: grid;
+    grid-gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+
+    
+}
+
+
+.card{
+    padding: 2%;
+    background-color: rgb(151, 5, 5);
+    color: aliceblue;
+    border-radius: 10px;
+}
+.card:hover{
+    transform: scale(1.1);
+    padding: 10px;
+    background-color: rgb(102, 1, 1);
+    transition: 0.5s;
+}
+
+.card-title{
+    font-family: var(--font2);
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+.card-description{
+    font-family: var(--font3);
+    font-size: 18px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+
+.column{
+    display: grid;
+    gap: 0.5em;
+
+}
+.aptitudes{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    padding: 2%;
+    width: 90%;
+    height: auto;
+    background-color: rgb(187, 7, 8);
+    color: aliceblue;
+    border-radius: 5px;
+}
+
+.aptitudes__item{
+    display: flex;
+    align-self: center;
+    justify-content: space-between;
+}
+
+.skill__bar{
+    width:175px;
+    height: 8px;
+    background-color: rgb(255, 60, 60);
+    border-radius: 5px;
+
+}
