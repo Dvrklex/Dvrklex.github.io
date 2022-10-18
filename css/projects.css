@@ -30,11 +30,11 @@ ol h2{
 ol a {
 position: relative;
 /* display: block;s */
-
+font-family: var(--font3);
 justify-content: center;
 display: flex;
 padding: .4em .4em .4em .8em;
-margin: .50em 0 .5em 2.5em;
+margin: .50em 1.5em .5em 2.5em;
 background: #c77700;
 color: rgb(0, 0, 0);
 text-decoration: none;
