@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&family=Padauk&family=Pragati+Narrow&display=swap');
+:root {
+    --font1:'Cantarell', sans-serif;
+    --font2: 'Pragati Narrow', sans-serif;
+    --font3:'Padauk', sans-serif;
+    --font-white: rgb(255, 255, 255);
+}       
+ol {
+    width: 60vh;
+    justify-content: center;
+    margin: 5vh auto;
+    counter-reset: li; 
+    list-style: none; 
+    padding: 2%;
+    font-family: var(--font2);
+    font-size: 18px;
+    border: #c77700 1px solid;
+    border-radius: 10px;
+    background-color: #ffae0007;
+    box-shadow: #c77700 0 0 10px 0;
+
+}
+ol h2{
+    font-family: var(--font1);
+    font-size: 26px;
+    color: #ffffff;
+    text-align: center;
+    padding: 2%;
+}
+ol a {
+position: relative;
+/* display: block;s */
+
+justify-content: center;
+display: flex;
+padding: .4em .4em .4em .8em;
+margin: .50em 0 .5em 2.5em;
+background: #c77700;
+color: rgb(0, 0, 0);
+text-decoration: none;
+transition: all .3s ease-out;
+}
+
+ol a:hover {
+    background: #ff9500;
+}
+
+ol a:after {
+position: absolute;
+margin: auto;
+content: "";
+border: .5em solid transparent;
+left: -1em;
+top: 50%;
+margin-top: -.5em;
+transition: all .3s ease-out;
+}
+
+ol a:hover:after {
+/* left: -.5em; */
+border-left-color: #ff1100;
+
+}
+    
+
+/* Responsive */
+@media screen and (max-width: 1000px) {
+    ol {
+        max-width: 600px;
+        margin: 25px auto;
+    }
+    ol a{
+        margin-right: 2.5em;
+    }
+
+    
+}
