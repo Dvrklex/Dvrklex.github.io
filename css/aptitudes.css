@@ -1,0 +1,83 @@
+@import url('https://fonts.googleapis.com/css2?family=Cantarell:wght@400;700&family=Padauk&family=Pragati+Narrow&display=swap');
+:root {
+    --font1:'Cantarell', sans-serif;
+    --font2: 'Pragati Narrow', sans-serif;
+    --font3:'Padauk', sans-serif;
+    --font-white: rgb(255, 255, 255);
+}
+.card__aptitudes{
+    display: flex;
+    flex-direction: column;
+    align-self:center;
+    justify-content: center;
+    align-items: center;
+   
+    background-color: rgba(0, 0, 0, 0.788);
+    border-radius: 10px;
+    box-shadow: 0 0 15px 0 rgb(146, 0, 0);
+
+}
+
+.card__title{
+    color: var(--font-white);
+    font-family: var(--font2);
+    font-size: 24px;
+    text-align: center;
+    padding: 2%;
+    width: 70%;
+    margin: auto;
+}
+.skills__tech{
+    color: var(--font-white);
+    font-family: var(--font3);
+    font-size: 24px;
+    text-align: center;
+    padding: 2%;
+    width: 70%;
+    margin: auto;
+}
+.column{
+    
+    display: grid;
+    width: 60vh;
+    justify-content: center;
+    margin: 5vh auto;
+}
+
+@media screen and (min-width: 768px){
+    .column{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, min-content);
+    }
+}
+
+.aptitudes{
+    padding: 1em 0;
+    
+}
+
+.aptitudes__items{
+    display: flex;
+    align-self: center;
+    flex-wrap: nowrap;
+   
+   
+}
+
+.skills__bar,
+.skills__bar::after{
+    width:175px;
+    height: 8px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 5px;
+    margin: auto;
+
+}
+
+.skills__bar::after{
+    content: "";
+    position: absolute;
+    
+    background-color: rgb(255, 60, 60);
+        
+}
