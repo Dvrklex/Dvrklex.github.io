@@ -114,7 +114,7 @@
 
 
 /* responsive */
-@media screen and (max-width: 914px) {
+@media screen and (max-width: 1200px) {
     .glass{
         display: none;
     }

@@ -64,13 +64,14 @@ border-left-color: #ff1100;
     
 
 /* Responsive */
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1500px) {
     ol {
         max-width: 600px;
         margin: 25px auto;
     }
     ol a{
         margin-right: 2.5em;
+        font-size: 28px;
     }
 
     

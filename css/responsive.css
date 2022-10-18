@@ -1,7 +1,7 @@
 @media (max-width: 1000px) {
     .background .items-background-container{
         width: 90%;
-        height: 100%;
+        height: auto;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
@@ -32,6 +32,10 @@
         justify-content: center;
         align-items: center;
     }
+    .my-description p{
+        font-size: 28px;
+    }
+    
     .card-container{
         max-width: 900px;
         height: 100%;
@@ -42,7 +46,7 @@
         margin: auto;
     }
     .card{
-        width: auto;
+        width: 70%;
         height: auto;
         display: flex;
         flex-direction: column;
@@ -50,5 +54,18 @@
         align-items: center;
         margin: auto;
         /* margin-left: 10px; */
+    }
+    .card-title h3{
+        font-size: 35px;
+    }
+    .card-description p{
+        font-size: 30px;
+    }
+
+    .accordion label{
+        font-size: 30px;
+    }
+    .accordion-content {
+        font-size: 30px;
     }
 }
