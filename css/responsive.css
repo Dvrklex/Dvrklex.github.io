@@ -1,6 +1,6 @@
 @media (max-width: 1000px) {
     .background .items-background-container{
-        width: 90%;
+        width: 100%;
         height: auto;
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -13,9 +13,7 @@
         place-items: center;   
 
     }
-    .items-container{
-        margin-left: 10px;
-    }
+  
     .about-me{
         max-width: 50vh;
         height: 100%;
