@@ -137,92 +137,92 @@ border-radius: 0.25em;
 transform: translate(-50%, -50%) rotate(90deg);
 }
 
-@-webkit-keyframes anim_circle-trabajo_equipo {
+/* @-webkit-keyframes anim_circle-trabajo_equipo {
 to {
     stroke-dashoffset: 40;
 }
-}
+} */
 
 @keyframes anim_circle-trabajo_equipo {
 to {
     stroke-dashoffset: 40;
 }
 }
-@-webkit-keyframes anim_circle-responsabilidad {
+/* @-webkit-keyframes anim_circle-responsabilidad {
 to {
     stroke-dashoffset: 0;
 }
-}
+} */
 @keyframes anim_circle-responsabilidad {
 to {
     stroke-dashoffset: 0;
 }
 }
-@-webkit-keyframes anim_circle-comunicacion {
+/* @-webkit-keyframes anim_circle-comunicacion {
 to {
     stroke-dashoffset: 30;
 }
-}
+} */
 @keyframes anim_circle-comunicacion {
 to {
     stroke-dashoffset: 35;
 }
 }
-@-webkit-keyframes anim_circle-resolucion {
+/* @-webkit-keyframes anim_circle-resolucion {
 to {
     stroke-dashoffset: 88;
 }
-}
+} */
 @keyframes anim_circle-resolucion {
 to {
-    stroke-dashoffset: 88;
+    stroke-dashoffset: 70;
 }
 }
-@-webkit-keyframes anim_circle-flexibilidad {
+/* @-webkit-keyframes anim_circle-flexibilidad {
 to {
     stroke-dashoffset: 100;
 }
-}
+} */
 @keyframes anim_circle-flexibilidad {
 to {
-    stroke-dashoffset: 100;
+    stroke-dashoffset: 90;
 }
 }
-@-webkit-keyframes anim_circle-predisposicion {
+/* @-webkit-keyframes anim_circle-predisposicion {
 to {
     stroke-dashoffset: 0;
 }
-}
+} */
 @keyframes anim_circle-predisposicion {
 to {
     stroke-dashoffset: 0;
 }
 }
-@-webkit-keyframes anim_circle-presencia {
+/* @-webkit-keyframes anim_circle-presencia {
 to {
     stroke-dashoffset: 10;
 }
-}
+} */
 @keyframes anim_circle-presencia {
 to {
     stroke-dashoffset: 10;
 }
 }
-@-webkit-keyframes anim_circle-autodidacta {
+/* @-webkit-keyframes anim_circle-autodidacta {
 to {
     stroke-dashoffset: 15;
 }
-}
+} */
 @keyframes anim_circle-autodidacta {
 to {
     stroke-dashoffset: 15;
 }
 }
-@-webkit-keyframes anim_circle-proactivo {
+/* @-webkit-keyframes anim_circle-proactivo {
 to {
     stroke-dashoffset: 20;
 }
-}
+} */
 @keyframes anim_circle-proactivo {
 to {
     stroke-dashoffset: 20;
