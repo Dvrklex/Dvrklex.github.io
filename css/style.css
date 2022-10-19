@@ -43,13 +43,13 @@
     display: grid;
     color: var(--font-white);
     font-family: var(--font1);
+    padding: auto;
 }
 .my-description{
     color: var(--font-white);
     font-family: var(--font2);
     font-size: 20px;
     text-align: center;
-    padding: 2%;
     width: 70%;
     margin: auto;
 }
@@ -71,9 +71,12 @@
 
 .card{
     padding: 2%;
-    background-color: rgb(151, 5, 5);
+    background-color: rgba(151, 5, 5, 0.479);
     color: aliceblue;
     border-radius: 10px;
+    border:rgb(87, 0, 0) 1px solid;
+    border-color: #f84828;
+    box-shadow: 0 0 10px 0 rgb(146, 0, 0);
 }
 .card:hover{
     /* transform: scale(1.1); */

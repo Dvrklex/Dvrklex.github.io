@@ -26,9 +26,17 @@ box-sizing: border-box;
     align-items: center;
     width: 80vh;
     margin: 5vh auto;
-    background-color: rgba(0, 0, 0, 0.788);
+    background-color: rgba(0, 0, 0, 0.219);
     border-radius: 10px;
-    box-shadow: 0 0 15px 0 rgb(146, 0, 0);
+    border:rgba(252, 0, 0, 0.733) solid 1px;
+    box-shadow: 0 0 10px 0 rgb(146, 0, 0);
+
+}
+.aptitudes-container  h2{
+    font-family: var(--font2);
+    font-size: 26px;
+    color: #ffffff;
+    padding: 2%;
 
 }
 
@@ -63,74 +71,59 @@ fill: none;
 stroke-width: 10;
 stroke-dasharray: 440;
 stroke-dashoffset: 440;
-stroke: white;
+stroke: rgb(255, 128, 23);
 stroke-linecap: round;
 transform: translate(5px, 5px);
 }
 
-.shadow-html {
-filter: drop-shadow(0 0 5px #ff6633);
-}
-.shadow-css {
-filter: drop-shadow(0 0 5px #33bbff);
-}
-.shadow-scss {
-filter: drop-shadow(0 0 5px #ff33ff);
-}
-.shadow-js {
-filter: drop-shadow(0 0 5px #ffff33);
-}
-.shadow-ts {
-filter: drop-shadow(0 0 5px #3377ff);
-}
-.shadow-node {
-filter: drop-shadow(0 0 5px #55ff33);
-}
-.shadow-react {
-filter: drop-shadow(0 0 5px #33ffff);
-}
-.shadow-angular {
-filter: drop-shadow(0 0 5px #ff3333);
-}
-.shadow-vue {
-filter: drop-shadow(0 0 5px #33ff88);
+.shadow_trabajo_equipo,
+.shadow_responsabilidad,
+.shadow_comunicacion,
+.shadow_resolucion,
+.shadow_flexibilidad,
+.shadow_predisposicion,
+.shadow_presencia,
+.shadow_autodidacta,
+.shadow_proactivo {
+filter: drop-shadow(0 0 4px#ff3300);
 }
 
-.circle-html {
--webkit-animation: anim_circle-html 1s ease-in-out forwards;
-        animation: anim_circle-html 1s ease-in-out forwards;
+
+.circle-trabajo_equipo {
+-webkit-animation: anim_circle-trabajo_equipo 1s ease-in-out forwards;
+        animation: anim_circle-trabajo_equipo 1s ease-in-out forwards;
 }
-.circle-css {
--webkit-animation: anim_circle-css 1s ease-in-out forwards;
-        animation: anim_circle-css 1s ease-in-out forwards;
+.circle-responsabilidad {
+-webkit-animation: anim_circle-responsabilidad 1s ease-in-out forwards;
+        animation: anim_circle-responsabilidad 1s ease-in-out forwards;
 }
-.circle-scss {
--webkit-animation: anim_circle-scss 1s ease-in-out forwards;
-        animation: anim_circle-scss 1s ease-in-out forwards;
+.circle-comunicacion {
+-webkit-animation: anim_circle-comunicacion 1s ease-in-out forwards;
+        animation: anim_circle-comunicacion 1s ease-in-out forwards;
 }
-.circle-js {
--webkit-animation: anim_circle-js 1s ease-in-out forwards;
-        animation: anim_circle-js 1s ease-in-out forwards;
+.circle-resolucion {
+-webkit-animation: anim_circle-resolucion 1s ease-in-out forwards;
+        animation: anim_circle-resolucion 1s ease-in-out forwards;
 }
-.circle-ts {
--webkit-animation: anim_circle-ts 1s ease-in-out forwards;
-        animation: anim_circle-ts 1s ease-in-out forwards;
+.circle-flexibilidad {
+-webkit-animation: anim_circle-flexibilidad 1s ease-in-out forwards;
+        animation: anim_circle-flexibilidad 1s ease-in-out forwards;
 }
-.circle-node {
--webkit-animation: anim_circle-node 1s ease-in-out forwards;
-        animation: anim_circle-node 1s ease-in-out forwards;
+.circle-predisposicion {
+-webkit-animation: anim_circle-predisposicion 1s ease-in-out forwards;
+        animation: anim_circle-predisposicion 1s ease-in-out forwards;
 }
-.circle-react {
--webkit-animation: anim_circle-react 1s ease-in-out forwards;
-        animation: anim_circle-react 1s ease-in-out forwards;
+.circle-presencia {
+-webkit-animation: anim_circle-presencia 1s ease-in-out forwards;
+        animation: anim_circle-presencia 1s ease-in-out forwards;
 }
-.circle-angular {
--webkit-animation: anim_circle-angular 1s ease-in-out forwards;
-        animation: anim_circle-angular 1s ease-in-out forwards;
+.circle-autodidacta {
+-webkit-animation: anim_circle-autodidacta 1s ease-in-out forwards;
+        animation: anim_circle-autodidacta 1s ease-in-out forwards;
 }
-.circle-vue {
--webkit-animation: anim_circle-vue 1s ease-in-out forwards;
-        animation: anim_circle-vue 1s ease-in-out forwards;
+.circle-proactivo {
+-webkit-animation: anim_circle-proactivo 1s ease-in-out forwards;
+        animation: anim_circle-proactivo 1s ease-in-out forwards;
 }
 
 .progressbar__text {
@@ -144,95 +137,95 @@ border-radius: 0.25em;
 transform: translate(-50%, -50%) rotate(90deg);
 }
 
-@-webkit-keyframes anim_circle-html {
+@-webkit-keyframes anim_circle-trabajo_equipo {
 to {
-    stroke-dashoffset: 22;
+    stroke-dashoffset: 40;
 }
 }
 
-@keyframes anim_circle-html {
+@keyframes anim_circle-trabajo_equipo {
 to {
-    stroke-dashoffset: 22;
+    stroke-dashoffset: 40;
 }
 }
-@-webkit-keyframes anim_circle-css {
+@-webkit-keyframes anim_circle-responsabilidad {
 to {
-    stroke-dashoffset: 66;
+    stroke-dashoffset: 0;
 }
 }
-@keyframes anim_circle-css {
+@keyframes anim_circle-responsabilidad {
 to {
-    stroke-dashoffset: 66;
+    stroke-dashoffset: 0;
 }
 }
-@-webkit-keyframes anim_circle-scss {
+@-webkit-keyframes anim_circle-comunicacion {
 to {
-    stroke-dashoffset: 132;
+    stroke-dashoffset: 30;
 }
 }
-@keyframes anim_circle-scss {
+@keyframes anim_circle-comunicacion {
 to {
-    stroke-dashoffset: 132;
+    stroke-dashoffset: 35;
 }
 }
-@-webkit-keyframes anim_circle-js {
-to {
-    stroke-dashoffset: 88;
-}
-}
-@keyframes anim_circle-js {
+@-webkit-keyframes anim_circle-resolucion {
 to {
     stroke-dashoffset: 88;
 }
 }
-@-webkit-keyframes anim_circle-ts {
+@keyframes anim_circle-resolucion {
 to {
-    stroke-dashoffset: 198;
+    stroke-dashoffset: 88;
 }
 }
-@keyframes anim_circle-ts {
+@-webkit-keyframes anim_circle-flexibilidad {
 to {
-    stroke-dashoffset: 198;
+    stroke-dashoffset: 100;
 }
 }
-@-webkit-keyframes anim_circle-node {
+@keyframes anim_circle-flexibilidad {
 to {
-    stroke-dashoffset: 308;
+    stroke-dashoffset: 100;
 }
 }
-@keyframes anim_circle-node {
+@-webkit-keyframes anim_circle-predisposicion {
 to {
-    stroke-dashoffset: 308;
+    stroke-dashoffset: 0;
 }
 }
-@-webkit-keyframes anim_circle-react {
+@keyframes anim_circle-predisposicion {
 to {
-    stroke-dashoffset: 387.2;
+    stroke-dashoffset: 0;
 }
 }
-@keyframes anim_circle-react {
+@-webkit-keyframes anim_circle-presencia {
 to {
-    stroke-dashoffset: 387.2;
+    stroke-dashoffset: 10;
 }
 }
-@-webkit-keyframes anim_circle-angular {
+@keyframes anim_circle-presencia {
 to {
-    stroke-dashoffset: 418;
+    stroke-dashoffset: 10;
 }
 }
-@keyframes anim_circle-angular {
+@-webkit-keyframes anim_circle-autodidacta {
 to {
-    stroke-dashoffset: 418;
+    stroke-dashoffset: 15;
 }
 }
-@-webkit-keyframes anim_circle-vue {
+@keyframes anim_circle-autodidacta {
 to {
-    stroke-dashoffset: 431.2;
+    stroke-dashoffset: 15;
 }
 }
-@keyframes anim_circle-vue {
+@-webkit-keyframes anim_circle-proactivo {
 to {
-    stroke-dashoffset: 431.2;
+    stroke-dashoffset: 20;
+}
+}
+@keyframes anim_circle-proactivo {
+to {
+    stroke-dashoffset: 20;
 }
 }
 
