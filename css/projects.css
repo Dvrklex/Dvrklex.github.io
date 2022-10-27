@@ -4,6 +4,11 @@
     --font2: 'Pragati Narrow', sans-serif;
     --font3:'Padauk', sans-serif;
     --font-white: rgb(255, 255, 255);
+    --silver: #8B939C; /*Roman Silver*/
+    --orange: #FF4A1C; /*Red Orange Color Wheel*/
+    --gold: #F3A712; /*Marigold*/
+    --dark_blue: #1B1F3B; /*Space Cadet*/
+    --light: #F7EBEC; /*Lavender Blush*/
 }       
 ol {
     width: 60vh;
@@ -65,7 +70,7 @@ border-left-color: #ff1100;
     
 
 /* Responsive */
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1000px) {
     ol {
         max-width: 600px;
         margin: 25px auto;
