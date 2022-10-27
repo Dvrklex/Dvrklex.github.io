@@ -5,13 +5,16 @@
     --font3:'Padauk', sans-serif;
     --font-white: rgb(255, 255, 255);
     --silver: #8B939C; /*Roman Silver*/
-    --orange: #FF4A1C; /*Red Orange Color Wheel*/
+    --orange-color: #eb4123; /*Red Orange Color Wheel*/
     --gold: #F3A712; /*Marigold*/
     --dark_blue: #1B1F3B; /*Space Cadet*/
     --light: #F7EBEC; /*Lavender Blush*/
+    --bordo: #721817;
+    --box-background: #0b0e22; /*Color de fondo del rectangulo*/
+    --black: #000000; 
 }       
 ol {
-    width: 60vh;
+    width: 60%;
     justify-content: center;
     margin: 5vh auto;
     counter-reset: li; 
@@ -19,16 +22,16 @@ ol {
     padding: 2%;
     font-family: var(--font2);
     font-size: 18px;
-    border: #c77700 1px solid;
+    border: var(--gold) 1px solid;
     border-radius: 10px;
     background-color: #ffae0007;
-    box-shadow: #c77700 0 0 10px 0;
+    box-shadow: var(--orange) 0 0 10px 0;
 
 }
 ol h2{
     font-family: var(--font2);
     font-size: 26px;
-    color: #ffffff;
+    color: var(--light);
     text-align: center;
     padding: 2%;
 }
@@ -36,18 +39,20 @@ ol a {
 position: relative;
 /* display: block;s */
 font-family: var(--font3);
+font-size: 20px;
 justify-content: center;
 display: flex;
 padding: .4em .4em .4em .8em;
 margin: .50em 1.5em .5em 2.5em;
-background: #c77700;
-color: rgb(255, 255, 255);
+background: var(--orange-color);
+border-radius: 3px;
+color: var(--black);
 text-decoration: none;
 transition: all .3s ease-out;
 }
 
 ol a:hover {
-    background: #ff9500;
+    background: var(--gold);
     color: #000;
 }
 
@@ -64,7 +69,7 @@ transition: all .3s ease-out;
 
 ol a:hover:after {
 /* left: -.5em; */
-border-left-color: #ff1100;
+border-left-color: var(--gold);
 
 }
     
@@ -78,6 +83,7 @@ border-left-color: #ff1100;
     ol a{
         margin-right: 2.5em;
         font-size: 28px;
+        background: var(--gold);
     }
 
     

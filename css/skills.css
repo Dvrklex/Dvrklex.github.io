@@ -11,12 +11,18 @@
     --light: #F7EBEC; /*Lavender Blush*/
 }
 .skills-section{
-    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-self:center;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    margin: 5vh auto;
 }
 
 .skills-header{
     text-align: center;
-    color: #fff;
+    color: var(--light);
     padding: 1rem;
     position: relative;
     font-family: var(--font2);
@@ -30,7 +36,7 @@
     transform: translateX(-50%);
     width: 100px;
     height: 4px;
-    background-color: #e9a105;
+    background-color: var(--gold);
     border-radius: 2px;
 }
 
@@ -40,8 +46,8 @@
     justify-content:center;
     align-items:center;
     text-align: center;
-    /* grid-gap:1rem; */
-    /* padding: 1rem 80px; */
+    width: 90%;
+ 
 }
 .skills-box{
     padding: 1rem;
@@ -67,7 +73,7 @@
     height:90px;
     position: relative;
     border-radius: 45px;
-    background-color: #fff;
+    background-color: var(--light);
     display:flex;
     justify-content:center;
     align-items:center;
@@ -81,19 +87,19 @@
     left: 0;
     width:50%;
     height:90px;
-    background: rgba(100, 100, 100, 0.5);
+    background: var(--silver);
     border-radius: 45px 0 0 45px;
 }
 .skills-title h3{
     color: #333;
     margin-top: 0.5rem;
 }
-@media screen and (max-width:990px){
+/* @media screen and (max-width:990px){
     .skills-container{
     grid-tempLate-columns: repeat(2, 1fr);
     padding: 2rem 50px;
     }
-}
+} */
 
 @media screen and (max-width:650px){
     .skills-container{
@@ -101,3 +107,5 @@
     padding: 2rem 50px;
     }
 }
+
+

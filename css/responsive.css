@@ -1,17 +1,17 @@
 @media (max-width: 1000px) {
     .background .items-background-container{
+        background-size: cover;
         width: 100%;
-        height:auto;
+        height: 4500px;
         display: grid;
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
         grid-gap: 10px;
         justify-content: center;
         align-items: center;
-        margin: auto;     
         place-content: center;
         place-items: center;   
-
+        
     }
     
     .about-me{
