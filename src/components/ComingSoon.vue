@@ -3,7 +3,7 @@
     <section class="timeline" data-aos="zoom-in">
       <h2>Experiencia</h2>
       <hr />
-      <p> <i class="fa-solid fa-gear"></i> En proceso</p>
+      <p><i class="fa-solid fa-gear"></i> En proceso</p>
 
     </section>
   </main>
