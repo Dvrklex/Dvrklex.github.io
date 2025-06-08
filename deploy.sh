@@ -12,7 +12,7 @@ cd dist
 
 # Inicializar un nuevo repo Git en la carpeta dist
 echo "🚀 Desplegando a GitHub Pages..."
-git init
+# git init
 git add -A
 git commit -m "deploy"
 
