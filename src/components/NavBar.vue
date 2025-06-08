@@ -7,7 +7,7 @@
       <li>
         
         <a
-          href="../assets/AlexisRosales-CurriculumVitae.pdf"
+          href="../../public/AlexisRosales-CurriculumVitae.pdf"
           class="download-link"
           download
           @click="handleDownload"

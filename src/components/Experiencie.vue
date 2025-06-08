@@ -76,6 +76,7 @@
 
     .timeline h2 {
       text-align: center;
+      color: var(--primary);
       font-size: 3rem;
       margin-bottom: 10px;
       font-family: 'Unica One', cursive;

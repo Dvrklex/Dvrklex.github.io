@@ -61,7 +61,7 @@ main {
 }
 
 h2 {
-  font-size: 2.2rem;
+  font-size: 3rem;
   color: var(--primary);
   margin-bottom: 30px;
   text-align: center;

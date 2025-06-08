@@ -45,6 +45,7 @@
 
 .education-section h2 {
   text-align: center;
+  color: var(--primary);
   font-size: 3rem;
   margin-bottom: 30px;
   font-family: 'Unica One', cursive;
@@ -65,7 +66,7 @@
 .education-item:hover {
   transition: 0.5s;
   cursor: pointer;
-  box-shadow: 0 0px 10px #f8d66d;
+  box-shadow: 0 0px 10px var(--light-yellow);
   border: 1px solid yellow;
 }
 
@@ -83,11 +84,11 @@
   box-shadow: 0 3px 10px rgba(0,0,0,0.2);
 }
 .education-icon:hover{
-  color: #f8d66d;
+  color: var(--white);
   transition: 0.5s;
   cursor: pointer;
-  box-shadow: 0 0px 10px #f8d66d;
-  border: 1px solid yellow;
+  box-shadow: 0 0px 10px var(--white);
+  border: 1px solid var(--white);
 }
 .education-content {
   flex: 1;
@@ -96,7 +97,7 @@
 .education-content h3 {
   font-size: 1.1rem;
   margin: 0;
-  color: #f8d66d;
+  color: var(--light-yellow);
   font-weight: 600;
 }
 
