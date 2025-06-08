@@ -1,43 +1,25 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
-echo "🚀 Iniciando deploy para GitHub Pages..."
+# Detener ejecución si hay errores
+set -e
 
-# Verificamos que estemos en la rama main
-CURRENT_BRANCH=$(git symbolic-ref --short HEAD)
-if [ "$CURRENT_BRANCH" != "main" ]; then
-  echo "❌ Tenés que ejecutar este script desde la rama main. Estás en: $CURRENT_BRANCH"
-  exit 1
-fi
+# Construir el proyecto para producción
+echo "🔨 Construyendo el proyecto..."
+npm run build
 
-echo "🔨 Generando build de producción con Vite..."
-npm run build || { echo "❌ Falló el build"; exit 1; }
+# Navegar al directorio de salida
+cd dist
 
-echo "🗃️ Guardando build en carpeta temporal..."
-TEMP_DIR=$(mktemp -d)
-cp -R dist/* "$TEMP_DIR"
+# Inicializar un nuevo repo Git en la carpeta dist
+echo "🚀 Desplegando a GitHub Pages..."
+git init
+git add -A
+git commit -m "deploy"
 
-echo "📦 Guardando cambios locales antes de cambiar de rama..."
-git stash push -m "stash-deploy"
+# Forzar push a la rama gh-pages
+git push -f https://github.com/Dvrklex/dvrklex.github.io.git master:gh-pages
 
-echo "📦 Cambiando a rama gh-pages..."
-git checkout gh-pages || { echo "❌ No se pudo cambiar a gh-pages"; exit 1; }
+# Volver al directorio anterior
+cd -
 
-echo "🧹 Limpiando rama gh-pages..."
-git rm -rf . > /dev/null
-cp -R "$TEMP_DIR"/* .
-
-echo "📤 Subiendo cambios a gh-pages..."
-git add .
-git commit -m "🚀 Deploy actualizado desde dist/"
-git push origin gh-pages
-
-echo "🧹 Eliminando carpeta temporal..."
-rm -rf "$TEMP_DIR"
-
-echo "🔙 Volviendo a rama main..."
-git checkout main
-
-echo "♻️ Restaurando cambios locales guardados..."
-git stash pop stash@{0}
-
-echo "✅ Deploy exitoso 🚀"
+echo "✅ Deploy completado."
