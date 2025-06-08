@@ -12,12 +12,13 @@ cd dist
 
 # Inicializar un nuevo repo Git en la carpeta dist
 echo "🚀 Desplegando a GitHub Pages..."
-# git init
+git init
+git checkout -b main   # 🔥 ESTA LÍNEA ES CLAVE
 git add -A
 git commit -m "deploy"
 
 # Forzar push a la rama gh-pages
-git push -f https://github.com/Dvrklex/dvrklex.github.io.git master:gh-pages
+git push -f https://github.com/Dvrklex/dvrklex.github.io.git main:gh-pages
 
 # Volver al directorio anterior
 cd -
