@@ -13,10 +13,13 @@
           @click="handleDownload"
         ><i class="fa-solid fa-download"></i> Descargar CV</a>
       </li>
+      <!-- <li><ThemeToggle /></li> -->
+
     </ul>
   </nav>
 </template>
 <script setup>
+import ThemeToggle from './ThemeToggle.vue'
 const handleDownload = (e) => {
   e.preventDefault() 
 
@@ -90,7 +93,7 @@ const handleDownload = (e) => {
   }
   
   li a:hover {
-    background-color: #e0b62c;
+    background-color: #ffd23f;
   }
   /* li:hover {
     cursor: pointer;

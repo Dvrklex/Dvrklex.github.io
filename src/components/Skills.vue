@@ -64,55 +64,74 @@
 </script>
 
 <style scoped>
-    main {
-        max-width: 1000px;
-        margin: auto;
-        padding: 20px;
-    }
-    .skills {
-        background-color: white;
-        padding: 25px;
-        margin-top: 25px;
-        border-radius: 12px;
-        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-        animation: fadeInUp 1.2s ease;
-        max-width: 1000px;
-        margin-left: auto;
-        margin-right: auto;
-    }
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
 
-    h2 {
-        text-align: center;
-        color: #c9a227;
-        font-size: 1.8rem;
-        margin-bottom: 20px;
-    }
+.skills {
+  padding: 40px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(20, 20, 20, 0.7), rgba(30, 30, 30, 0.85));
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  color: #eee;
+  animation: fadeInUp 1s ease;
+}
 
-    .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 20px;
-        margin-top: 20px;
-    }
+h2 {
+  text-align: center;
+  font-size: 2.2rem;
+  color: var(--primary);
+  margin-bottom: 30px;
+  font-family: 'Unica One', cursive;
+  letter-spacing: 1px;
+}
 
-    .skill-card {
-        background: #f9f9f9;
-        border-radius: 10px;
-        padding: 15px;
-        text-align: center;
-        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
+.skill-group h3 {
+  font-size: 1.3rem;
+  margin: 20px 0 10px;
+  color: #f0c94b;
+}
 
-    .skill-card:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-    }
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 24px;
+  margin-bottom: 30px;
+}
 
-    .skill-card i {
-        font-size: 2rem;
-        margin-bottom: 8px;
-        color: #c9a227;
-    }
+.skill-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(6px);
+  position: relative;
+}
 
+.skill-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
+}
+
+.skill-card i {
+  font-size: 2.4rem;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.skill-card span {
+  display: block;
+  margin-top: 5px;
+  font-weight: 600;
+  color: #fdfdfd;
+  font-size: 0.95rem;
+}
 </style>
+

@@ -44,72 +44,76 @@ const projects = [
 
 
 <style scoped>
-    main {
+main {
   max-width: 1000px;
   margin: auto;
   padding: 20px;
 }
 
-section {
-  padding: 25px;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+.proyects {
+  background: linear-gradient(135deg, #1a1a1a, #262626);
+  color: #eee;
+  padding: 40px;
+  border-radius: 28px 8px 28px 8px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  position: relative;
+  overflow: hidden;
 }
 
 h2 {
+  font-size: 2.2rem;
+  color: var(--primary);
+  margin-bottom: 30px;
   text-align: center;
-  color: #c9a227;
-  font-size: 2rem;
-  margin-bottom: 20px;
+  font-family: 'Unica One', cursive;
+  letter-spacing: 1px;
 }
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
   gap: 24px;
-  justify-content: center;
 }
 
 .project-card {
-  background: #121212;
-  color: #f4f4f4;
-  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 100%;
-  width: 100%;
+  backdrop-filter: blur(6px);
+  position: relative;
 }
 
 .project-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 12px 30px rgba(255, 215, 0, 0.2);
 }
 
 .card-image {
   width: 100%;
-  height: 140px;
+  height: 150px;
   object-fit: cover;
 }
 
 .card-content {
-  padding: 16px;
+  padding: 18px;
   display: flex;
   flex-direction: column;
   flex-grow: 1;
 }
 
 .card-content h3 {
-  font-size: 1.2rem;
-  color: #f5d742;
-  margin-bottom: 8px;
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin-bottom: 12px;
 }
 
 .description {
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   color: #ccc;
   margin-bottom: 12px;
 }
@@ -123,7 +127,7 @@ h2 {
 
 .badge {
   background: #292929;
-  color: #f5d742;
+  color: var(--primary);
   padding: 4px 10px;
   border-radius: 12px;
   font-size: 0.75rem;
@@ -132,23 +136,24 @@ h2 {
 
 .card-links {
   display: flex;
+  justify-content: flex-start;
   gap: 10px;
   margin-top: auto;
 }
 
 .card-links a {
-  background: #c9a227;
+  background: var(--primary);
   color: #111;
-  padding: 6px 12px;
-  border-radius: 6px;
+  padding: 6px 14px;
+  border-radius: 8px;
   font-weight: bold;
+  font-size: 0.85rem;
   text-decoration: none;
-  font-size: 0.8rem;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
 }
 
 .card-links a:hover {
   background: #e0b62c;
+  transform: scale(1.05);
 }
-
 </style>

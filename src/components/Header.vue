@@ -5,7 +5,6 @@
         <h1>ALEXIS ROSALES</h1>
         <p><span ref="typedTarget" class="ocupation"></span></p>
       </div>
-      <!-- <img src="https://media.licdn.com/dms/image/v2/D4E03AQHtisjmwwmy-A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1678930437082?e=1754524800&v=beta&t=lSvlNswczaZIkNYTRqVrw5o3pkJxpynvaPEbEYyPOOQ" alt="Foto de perfil" /> -->
        <div class="image-wrapper">
   <img src="https://media.licdn.com/dms/image/v2/D4E03AQHtisjmwwmy-A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1678930437082?e=1754524800&v=beta&t=lSvlNswczaZIkNYTRqVrw5o3pkJxpynvaPEbEYyPOOQ" alt="Foto de perfil" />
 </div>
@@ -16,37 +15,31 @@
     <li>
       <a href="tel:+5493583439544" title="Teléfono" target="_blank">
         <i class="fas fa-phone"></i>
-        <!-- <span>+54 9 358 343 9544</span> -->
       </a>
     </li>
     <li>
       <a href="mailto:dvrklex@gmail.com" title="Email">
         <i class="fas fa-envelope"></i>
-        <!-- <span>dvrklex@gmail.com</span> -->
       </a>
     </li>
     <li>
       <a href="https://www.linkedin.com/in/dvrklex" title="LinkedIn" target="_blank">
         <i class="fab fa-linkedin"></i>
-        <!-- <span>linkedin.com/in/dvrklex</span> -->
       </a>
     </li>
     <li>
       <a href="https://github.com/Dvrklex" title="GitHub" target="_blank">
         <i class="fab fa-github"></i>
-        <!-- <span>github.com/Dvrklex</span> -->
       </a>
     </li>
     <li>
       <a href="https://instagram.com/dvrklex" title="Instagram" target="_blank">
         <i class="fab fa-instagram"></i>
-        <!-- <span>@dvrklex</span> -->
       </a>
     </li>
     <li>
       <a href="https://www.google.com/maps/place/R%C3%ADo+Cuarto,+C%C3%B3rdoba" title="Ubicación" target="_blank">
         <i class="fas fa-map-marker-alt"></i>
-        <!-- <span>Río Cuarto, Córdoba</span> -->
       </a>
     </li>
   </ul>

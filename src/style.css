@@ -1,3 +1,18 @@
+:root {
+  --primary: #f5d742;
+
+ }
+
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #1a1a1a;
+    line-height: 1.6;
+    color: var(--text);
+    transition: background 0.4s ease, color 0.4s ease;
+
+}
+
 * {
     box-sizing: border-box;
     scroll-behavior: smooth;

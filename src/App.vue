@@ -16,8 +16,8 @@
         <Experience />
         <Education />
         <Skills />
-        <ComingSoon />
-        <!-- <Projects /> -->
+        <!-- <ComingSoon /> -->
+        <Projects />
         <Contact />
       </main>
     </div>
