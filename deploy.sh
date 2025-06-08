@@ -16,6 +16,9 @@ echo "🗃️ Guardando build en carpeta temporal..."
 TEMP_DIR=$(mktemp -d)
 cp -R dist/* "$TEMP_DIR"
 
+echo "📦 Guardando cambios locales antes de cambiar de rama..."
+git stash push -m "stash-deploy"
+
 echo "📦 Cambiando a rama gh-pages..."
 git checkout gh-pages || { echo "❌ No se pudo cambiar a gh-pages"; exit 1; }
 
@@ -33,5 +36,8 @@ rm -rf "$TEMP_DIR"
 
 echo "🔙 Volviendo a rama main..."
 git checkout main
+
+echo "♻️ Restaurando cambios locales guardados..."
+git stash pop stash@{0}
 
 echo "✅ Deploy exitoso 🚀"
