@@ -5,9 +5,10 @@
         <h1>ALEXIS ROSALES</h1>
         <p><span ref="typedTarget" class="ocupation"></span></p>
       </div>
-       <div class="image-wrapper">
-  <img src="https://media.licdn.com/dms/image/v2/D4E03AQHtisjmwwmy-A/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1678930437082?e=1754524800&v=beta&t=lSvlNswczaZIkNYTRqVrw5o3pkJxpynvaPEbEYyPOOQ" alt="Foto de perfil" />
-</div>
+       <!-- <div class="image-wrapper"> -->
+        <!-- <img src="https://res.cloudinary.com/dc4i4wfek/image/upload/v1750857043/me_msgtdp.png" alt="Foto de perfil" /> -->
+         <!-- <img src="" alt=""> -->
+      <!-- </div> -->
 
     </section>
     <section class="social-info">
