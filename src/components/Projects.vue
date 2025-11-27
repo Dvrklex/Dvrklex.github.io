@@ -32,12 +32,12 @@
 <script setup>
 const projects = [
   {
-    title: 'DevTrack - Gestor de Tareas para Developers',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam beatae voluptates quibusdam maxime obcaecati.',
-    technologies: ['Vue.js', 'Pinia', 'Firebase'],
+    title: 'Portfolio',
+    description: 'Desarrollo de esta pequeña web como portfolio personal',
+    technologies: ['Vue.js', 'JavaScript', 'Github'],
     image: 'https://img.freepik.com/foto-gratis/banner-hoja-monstera-tropical-neon_53876-138943.jpg?semt=ais_items_boosted&w=740',
-    demo: 'https://devtrack.app',
-    repo: 'https://github.com/dvrklex/devtrack'
+    demo: 'https://dvrklex.github.io/',
+    repo: 'https://github.com/Dvrklex/Dvrklex.github.io'
   }
 ]
 </script>

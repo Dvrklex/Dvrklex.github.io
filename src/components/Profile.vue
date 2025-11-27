@@ -3,8 +3,9 @@
     <section class="profile">
       <h2><i class="fa-solid fa-terminal"></i> Perfil profesional</h2>
       <p>
-        Desarrollador Backend con experiencia en el diseño de API REST, bases de datos relacionales y WebSockets. 
-        Especializado en sistemas escalables, microservicios y automatización. Apasionado, autodidacta y resolutivo.
+        Soy un desarrollador backend, con experiencia en la construcción de APIs robustas y escalables, bases de datos
+        optimizadas y sistemas en tiem  po real con WebSockets. He llevado a cabo el desarrollo de microservicios y la
+        automatización de procesos críticos, mejorando el rendimiento y la eficiencia de los sistemas.
       </p>
     </section>
   </main>

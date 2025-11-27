@@ -7,15 +7,21 @@
       <div class="timeline-item">
         <div class="timeline-icon"><i class="fas fa-code"></i></div>
         <div class="timeline-content">
-          <h3>Desarrollador Back-end</h3>
+          <h3>Desarrollador Backend</h3>
           <span>Septiembre 2023 - Actualidad</span>
           <ul>
-            <li>Diseño e implementación de API Restful con Flask y PostgreSQL.</li>
+            <li>Diseñé e implementé APIs RESTful en Flask/PostgreSQL garantizando escalabilidad y
+              seguridad.
+            </li>
             <li>Automatización de procesos con Celery y tareas programadas.</li>
-            <li>Integración de sockets para comunicación en tiempo real.</li>
+            <li>Integré comunicación en tiempo real con WebSockets, mejorando la experiencia del
+                usuario en módulos interactivos.
+            </li>
             <li>Optimización de consultas SQL y monitoreo del rendimiento.</li>
             <li>Integración de modelos de lenguajes.</li>
-            <li>Desarrollo de microservicios desacoplados con autenticación JWT.</li>
+            <li>Desarrollé microservicios desacoplados para distintos módulos del sistema, integrando
+                bases de datos independientes y autenticación JWT
+            </li>
           </ul>
         </div>
       </div>
