@@ -4,7 +4,7 @@
       <h2><i class="fa-solid fa-terminal"></i> Perfil profesional</h2>
       <p>
         Soy un desarrollador backend, con experiencia en la construcción de APIs robustas y escalables, bases de datos
-        optimizadas y sistemas en tiem  po real con WebSockets. He llevado a cabo el desarrollo de microservicios y la
+        optimizadas y sistemas en tiempo real con WebSockets. He llevado a cabo el desarrollo de microservicios y la
         automatización de procesos críticos, mejorando el rendimiento y la eficiencia de los sistemas.
       </p>
     </section>
