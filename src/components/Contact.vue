@@ -15,18 +15,21 @@
         
         <button type="submit">Enviar</button>
       </form>
-      <p v-if="success" class="success">¡Mensaje enviado con éxito!</p>
-      <p v-if="error" class="error">Ocurrió un error. Intenta más tarde.</p>
+      <Toast position="bottom-right" group="bl" />
+
     </section>
   </main>
 </template>
 
 
 <script setup>
+    import { useToast } from 'primevue/usetoast';
     import { ref } from 'vue'
     import emailjs from 'emailjs-com'
 
 
+
+    const toast = useToast();
     const form = ref()
     const success = ref(false)    
     const error = ref(false)
@@ -40,14 +43,25 @@
       "ANDNz9EJzKwL-TXan"
     )
     .then(() => {
-      success.value = true
-      error.value = false
+      toast.add({
+        severity: 'success',
+        summary: 'Enviado correctamente',
+        detail: 'Tu mensaje fue enviado con éxito.',
+        life: 4000,
+        group: 'bl'
+      });
+
       form.value.reset()
     })
     .catch(() => {
-      success.value = false
-      error.value = true
-    })
+      toast.add({
+        severity: 'error',
+        summary: 'Error al enviar',
+        detail: 'Ocurrió un problema. Intenta nuevamente.',
+        life: 4000,
+        group: 'bl'
+      });
+    });
 }
 
 </script>

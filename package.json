@@ -10,9 +10,12 @@
     "deploy": "vite build && vite gh-pages"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "@fortawesome/fontawesome-free": "^6.7.2",
     "aos": "^2.3.4",
     "emailjs-com": "^3.2.0",
+    "primeicons": "^7.0.0",
+    "primevue": "^3.53.1",
     "typed.js": "^2.1.0",
     "vue": "^3.5.13"
   },

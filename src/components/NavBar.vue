@@ -1,57 +1,69 @@
 <template>
-  <nav>
-    <span class="logo">DVRKLEX</span>
-    <ul>
-      <li><a href="#">Inicio</a></li>
-      <li><a href="#contact">Contacto</a></li>
-      <li>
-        
-        <a
-          href="../../public/AlexisRosales-CurriculumVitae.pdf"
-          class="download-link"
-          download
-          @click="handleDownload"
-        ><i class="fa-solid fa-download"></i> Descargar CV</a>
-      </li>
-      <!-- <li><ThemeToggle /></li> -->
+<nav>
+  <span class="logo">DVRKLEX</span>
+  <ul>
+    
+    <li><a href="#">Inicio</a></li>
+    <li><a href="#contact">Contacto</a></li>
+    <li>
+      <a
+        class="download-link"
+        href="#"
+        @click="handleDownload"
+      >
+        <i class="fa-solid fa-download"></i> Descargar CV
+      </a>
+    </li>
+  </ul>
+</nav>
 
-    </ul>
-  </nav>
+<Toast position="top-right" group="cv" />
 </template>
 <script setup>
-import ThemeToggle from './ThemeToggle.vue'
-const handleDownload = (e) => {
-  e.preventDefault() 
+import { useToast } from 'primevue/usetoast'
 
-  const toast = document.createElement('div')
-  toast.className = 'cv-toast'
-  toast.innerText = '📄 Preparando CV...'
-  document.body.appendChild(toast)
+const toast = useToast()
 
-  setTimeout(() => {
-    toast.classList.add('visible')
-  }, 10)
+const handleDownload = async () => {
+  const fileUrl = "/AlexisRosales-CurriculumVitae.pdf"
 
-  // Simula "procesamiento"
-  setTimeout(() => {
-    toast.innerText = '📄 Descargando CV...'
-  }, 1000)
+  try {
+    // Verificar si el archivo existe
+    const res = await fetch(fileUrl, { method: "HEAD" })
 
-  // Realiza la descarga después de 1.5 segundos
-  setTimeout(() => {
-    toast.classList.remove('visible')
-    setTimeout(() => toast.remove(), 300)
+    if (!res.ok) {
+      throw new Error("Archivo no encontrado")
+    }
 
-    // Forza la descarga manualmente
+    // Descargar el archivo
     const link = document.createElement('a')
-    link.href = '/AlexisRosales-CurriculumVitae.pdf'
+    link.href = fileUrl
     link.download = 'AlexisRosales-CurriculumVitae.pdf'
     document.body.appendChild(link)
     link.click()
     link.remove()
-  }, 1500)
+
+    // Toast éxito (azul)
+    toast.add({
+      severity: 'success',     
+      summary: 'Curriculum se descargado correctamente',
+      life: 3000,
+      group: 'cv'
+    })
+
+  } catch (err) {
+    // Toast error (rojo)
+    toast.add({
+      severity: 'error',
+      summary: 'No se encontró el archivo',
+      detail: 'Verificá que el CV esté subido correctamente.',
+      life: 3500,
+      group: 'cv'
+    })
+  }
 }
 </script>
+
 
 <style scoped>
   nav {
