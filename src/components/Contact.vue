@@ -1,22 +1,47 @@
 <template>
-  <main data-aos="zoom-in">
-    <section class="contact" id="contact">
-      <h2>Contacto</h2>
-      <hr />
-      <form @submit.prevent="sendEmail" ref="form">
-        <label for="name">Nombre y apellido</label>
-        <input type="text" id="name" name="user_name" required placeholder="Nombre y apellido..." />
+  <main data-aos="fade-up">
+    <section class="contact-container" id="contact">
+      <div class="contact-grid">
         
-        <label for="email">Email</label>
-        <input type="email" id="email" name="user_email" required placeholder="contacto@gmail.com" />
-        
-        <label for="message">Mensaje</label>
-        <textarea id="message" name="message" required placeholder="Dejame tu mensaje aquí..."></textarea>
-        
-        <button type="submit">Enviar</button>
-      </form>
-      <Toast position="bottom-right" group="bl" />
+        <div class="contact-info">
+          <span class="pre-title">CONTACTO</span>
+          <h2>¿Hablamos?</h2>
+          <p>Estoy abierto a nuevas propuestas, colaboraciones o consultas técnicas para brindarte la mejor solución.</p>
+          
+          <div class="direct-links">
+            <div class="contact-item">
+              <i class="fas fa-location-dot"></i>
+              <span>Disponible remoto / Global</span>
+            </div>
+          </div>
+        </div>
 
+        <div class="form-wrapper">
+          <form @submit.prevent="sendEmail" ref="form">
+            <div class="input-group">
+              <input type="text" id="name" name="user_name" required placeholder=" " />
+              <label for="name">Nombre y apellido</label>
+            </div>
+            
+            <div class="input-group">
+              <input type="email" id="email" name="user_email" required placeholder=" " />
+              <label for="email">Tu Email</label>
+            </div>
+            
+            <div class="input-group">
+              <textarea id="message" name="message" required placeholder=" "></textarea>
+              <label for="message">Mensaje</label>
+            </div>
+            
+            <button type="submit" class="submit-btn">
+              <span>Enviar Mensaje</span>
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </div>
+
+      </div>
+      <Toast position="bottom-right" group="bl" />
     </section>
   </main>
 </template>
@@ -26,8 +51,6 @@
     import { useToast } from 'primevue/usetoast';
     import { ref } from 'vue'
     import emailjs from 'emailjs-com'
-
-
 
     const toast = useToast();
     const form = ref()
@@ -68,135 +91,131 @@
 
 <style scoped>
 main {
-  max-width: 1000px;
+  max-width: 900px;  
   margin: auto;
   padding: 40px 20px;
 }
 
-.contact {
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 30px;
+.contact-container {
+  background: var(--card-glass);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  overflow: hidden;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+}
+
+ .contact-info {
+  background: rgba(255, 255, 255, 0.02);
   padding: 40px;
-  backdrop-filter: blur(16px);
-  box-shadow: 0 0 60px rgba(255, 215, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  color: #eee;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.pre-title { color: var(--accent); font-size: 0.7rem; font-weight: 800; letter-spacing: 2px; }
+.contact-info h2 { font-size: 2.5rem; color: #fff; margin: 10px 0; }
+.contact-info p { color: #aaa; font-size: 0.9rem; line-height: 1.6; margin-bottom: 30px; }
+
+.direct-links { display: flex; flex-direction: column; gap: 15px; }
+.contact-item { 
+  display: flex; 
+  align-items: center; 
+  gap: 12px; 
+  color: #ddd; 
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+.contact-item i { color: var(--accent); }
+
+ .form-wrapper { padding: 40px; }
+form { display: flex; flex-direction: column; gap: 25px; }
+
+.input-group { position: relative; width: 100%; }
+
+.input-group input, 
+.input-group textarea {
+  width: 100%;
+background: linear-gradient(to bottom, transparent 90%, rgba(201, 162, 39, 0.02));  border: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 10px 0;
+  color: #fff;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.input-group label {
+  position: absolute;
+  top: 10px; left: 0;
+  color: #666;
+  pointer-events: none;
+  transition: 0.3s;
+}
+
+ .input-group input:focus ~ label,
+.input-group input:not(:placeholder-shown) ~ label,
+.input-group textarea:focus ~ label,
+.input-group textarea:not(:placeholder-shown) ~ label {
+  top: -15px;
+  font-size: 0.75rem;
+  color: var(--accent);
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+  outline: none;
+  border-bottom-color: var(--accent);
+}
+
+textarea { min-height: 80px; resize: none; }
+
+.submit-btn {
+  background: rgba(201, 162, 39, 0.02);
+  color: #c9a227;
+  border: 1px solid rgba(201, 162, 39, 0.3);
+  padding: 12px 28px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: all 0.4s ease;
   position: relative;
   overflow: hidden;
 }
 
-.contact::before {
-  content: "";
-  position: absolute;
-  top: -20%;
-  left: -20%;
-  width: 160%;
-  height: 160%;
-  background: radial-gradient(circle at top left, rgba(201, 162, 39, 0.15), transparent 60%);
-  z-index: 0;
-  animation: glow 8s infinite linear;
+.submit-btn:hover {
+  background: transparent;
+  border-color: #f5d742;
+  color: #fff;
+  box-shadow: 0 0 20px rgba(201, 162, 39, 0.2);
+  transform: scale(1.01);
+}
+ .submit-btn i {
+  transition: transform 0.4s ease;
 }
 
-@keyframes glow {
-  0%, 100% { transform: translate(0, 0); }
-  50% { transform: translate(30px, 20px); }
+.submit-btn:hover i {
+  transform: translate(5px, -5px);  
+  color: #f5d742;
 }
 
-h2 {
-  text-align: center;
-  color: var(--primary);
-  font-size: 2.2rem;
-  margin-bottom: 20px;
-  font-family: 'Unica One', cursive;
-  z-index: 1;
-  position: relative;
+ .contact-info h2 {
+  font-weight: 800;
+  background: linear-gradient(180deg, #fff 0%, #666 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  opacity: 0.9;
 }
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  z-index: 1;
-  position: relative;
-}
-
-label {
-  font-weight: 600;
-  color: #ddd;
-  font-size: 0.95rem;
-  margin-bottom: -10px;
-}
-
-input,
-textarea {
-  background: rgba(255, 255, 255, 0.07);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 12px;
-  padding: 12px 16px;
-  font-size: 1rem;
-  color: #eee;
-  font-family: inherit;
-  transition: all 0.3s ease;
-  box-shadow: inset 0 0 8px rgba(255, 255, 255, 0.05);
-}
-
-input::placeholder,
-textarea::placeholder {
-  color: #999;
-  font-style: italic;
-}
-
-input:focus,
-textarea:focus {
-  outline: none;
-  background-color: rgba(255, 255, 255, 0.1);
-  box-shadow: 0 0 12px var(--primary);
-}
-
-textarea {
-  resize: none;
-  min-height: 120px;
-}
-
-button {
-  background: var(--primary);
-  color: #111;
-  padding: 12px 24px;
-  font-weight: bold;
-  font-size: 1rem;
-  border: none;
-  border-radius: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 16px rgba(255, 215, 0, 0.4);
-  align-self: center;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-
-button:hover {
-  background: #e0b62c;
-  transform: scale(1.05);
-}
-
-.success,
-.error {
-  margin-top: 15px;
-  text-align: center;
-  font-weight: bold;
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-.success {
-  color: #38e38e;
-}
-
-.error {
-  color: #ff4f4f;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; }
-  to { opacity: 1; }
+ @media (max-width: 768px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .contact-info { border-right: none; border-bottom: 1px solid rgba(255, 255, 255, 0.05); }
 }
 </style>

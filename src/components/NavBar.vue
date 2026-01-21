@@ -1,23 +1,29 @@
 <template>
-<nav>
-  <span class="logo">DVRKLEX</span>
-  <ul>
-    
-    <li><a href="#">Inicio</a></li>
-    <li><a href="#contact">Contacto</a></li>
-    <li>
-      <a
-        class="download-link"
-        href="#"
-        @click="handleDownload"
-      >
-        <i class="fa-solid fa-download"></i> Descargar CV
-      </a>
-    </li>
-  </ul>
-</nav>
+  <nav class="navbar-container">
+    <div class="nav-content">
+      <span class="logo" data-text="DVRKLEX">DVRKLEX</span>
+      
+      <ul class="nav-links">
+        <li><a href="#" class="nav-item">Inicio</a></li>
+        <li><a href="#contact" class="nav-item">Contacto</a></li>
+        <li>
+          <button 
+            class="cv-button elite" 
+            @click="handleDownload"
+            aria-label="Descargar Curriculum"
+          >
+            <div class="btn-content">
+              <i class="fa-solid fa-download"></i>
+              <span>CV</span>
+            </div>
+            <div class="btn-shimmer"></div>
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
-<Toast position="top-right" group="cv" />
+  <Toast position="top-right" group="cv" />
 </template>
 <script setup>
 import { useToast } from 'primevue/usetoast'
@@ -63,104 +69,153 @@ const handleDownload = async () => {
   }
 }
 </script>
-
-
 <style scoped>
-  nav {
-    background-color: #111;
-    border-radius: 10px;
-    margin: 20px auto;
-    max-width: 1000px;
-    padding: 10px 0;
-    display: flex;
-    justify-content: space-between;
-    position: sticky;
-    top: 0;
-    z-index: 999;
-  }
-  ul {
-    display: flex;
-    justify-content: right;
-    gap: 30px;
-    list-style: none;
-    margin: 0;
-    margin-right: 30px;
-    padding: 0;
-  }
-  li a {
-    display: inline-block;
-    background-color: #c9a227;
-    padding: 10px 20px;
-    border-radius: 8px;
-    color: black;
-    font-weight: bold;
-    text-decoration: none;
-    transition: background 0.3s ease;
-  }
+.navbar-container {
+  position: sticky;
+  top: 15px;
+  z-index: 999;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
 
-  a {
-    color: #f4f4f4;
-    text-decoration: none;
-    font-weight: bold;
-  }
+.nav-content {
+  background: rgba(20, 20, 20, 0.7);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 22px;
+  padding: 10px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 
+    0 10px 30px rgba(0, 0, 0, 0.5),
+    inset 0 0 10px rgba(255, 255, 255, 0.02);
+}
+
+.logo {
+  font-family: 'Unica One', sans-serif;
+  font-size: 1.7rem;
+  letter-spacing: 5px;
+  position: relative;
+  cursor: pointer;
   
-  li a:hover {
-    background-color: #ffd23f;
-  }
-  /* li:hover {
-    cursor: pointer;
-    background-color: #c9a227;
-    transition: 0.5s;
-  } */
-  span {
-    color: white;
-    justify-content: center;
-    margin: auto 0;
-    margin-left: 30px;
-  }
-  a.download {
-    background: #c9a227;
-    color: black;
-    padding: 12px 24px;
-    border-radius: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  a.download:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 10px #c9a227;
-  }
-  .logo {
-    font-family: 'Unica One', sans-serif;
-    font-size: 2.2rem;
-    letter-spacing: 6px;
-    background: linear-gradient(90deg, #f5d742, #c9a227);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shine 4s infinite ease-in-out;
-    cursor: default;
-    user-select: none;
-  }
-  @keyframes shine {
-    0% { filter: brightness(1); }
-    50% { filter: brightness(1.4); }
-    100% { filter: brightness(1); }
-  }
-  .logo:hover {
-  text-shadow: 2px 0 red, -2px 0 blue;
-  animation: glitch 0.3s ease-in-out;
-  }
+  color: rgba(255, 255, 255, 0.1);
+  background: linear-gradient(180deg, rgba(255,255,255,0.1) 0%, rgba(0,0,0,0.4) 100%);
+  -webkit-background-clip: text;
+  text-shadow: 1px 1px 1px rgba(255,255,255,0.05), -1px -1px 1px rgba(0,0,0,0.5);
+  transition: all 0.4s ease;
+}
 
-  @keyframes glitch {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(-2px); }
-    40% { transform: translateX(2px); }
-    60% { transform: translateX(-1px); }
-    80% { transform: translateX(1px); }
-    100% { transform: translateX(0); }
-  }
+.logo:hover {
+  color: #fff;
+  -webkit-text-fill-color: #fff;
+  text-shadow: 
+    0 0 10px #f5d742,
+    0 0 20px #c9a227,
+    2px 0 1px red, 
+    -2px 0 1px blue; 
+  animation: glitch-anim 0.3s infinite;
+  transform: scale(1.05);
+}
+
+@keyframes glitch-anim {
+  0% { transform: translate(0); }
+  20% { transform: translate(-1px, 1px); }
+  40% { transform: translate(-1px, -1px); }
+  60% { transform: translate(1px, 1px); }
+  80% { transform: translate(1px, -1px); }
+  100% { transform: translate(0); }
+}
+
+.cv-button.elite {
+  background: transparent;
+  border: 1px solid rgba(201, 162, 39, 0.4); 
+  padding: 8px 18px;
+  border-radius: 12px;
+  color: #c9a227;
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
 
 
+.btn-shimmer {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transition: 0.6s;
+}
 
+.cv-button.elite:hover {
+  border-color: #f5d742;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(201, 162, 39, 0.4);
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  transform: translateY(-2px);
+}
+
+.cv-button.elite::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.cv-button.elite:hover::before {
+  left: 100%;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  color: #888;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s;
+}
+
+.nav-item:hover {
+  color: #f5d742;
+  text-shadow: 0 0 8px rgba(245, 215, 66, 0.4);
+}
+
+@media (max-width: 600px) {
+  .logo { font-size: 1.3rem; }
+  .nav-links { gap: 15px; }
+  .cv-button span { display: none; }
+}
 </style>

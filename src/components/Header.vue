@@ -1,272 +1,575 @@
 <template>
-  <header data-aos="zoom-in">
-    <section class="title">
-      <div>
-        <h1>ALEXIS ROSALES</h1>
-        <p><span ref="typedTarget" class="ocupation"></span></p>
+  <section class="portfolio-wrapper">
+
+    <main class="profile-grid" data-aos="fade-up">
+      <aside class="sidebar">
+        <div class="image-wrapper">
+          <div class="profile-glow"></div>
+          <img src="../../public/Yo.png" alt="Alexis Rosales" class="profile-img" />
+          <div class="image-fader"></div>
+          <div class="status-badge">
+            <span class="dot"></span> Connection: Active
+          </div>
+        </div>
+        <div class="sidebar-connector">
+          <div class="flow-container">
+            <div class="node"></div>
+            <div class="main-pipeline">
+              <div class="bit-stream"></div>
+            </div>
+            <div class="node"></div>
+            <div class="main-pipeline">
+              <div class="bit-stream delay"></div>
+            </div>
+            <div class="node"></div>
+          </div>
+        </div>
+        <div class="social-stack">
+          <a href="https://www.linkedin.com/in/dvrklex" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://github.com/Dvrklex" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="mailto:alexis.rosales.dev@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
+          <a href="tel:+5493583439544" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
+        </div>
+      </aside>
+
+      <section class="main-content">
+        <header class="intro">
+          <span class="greeting">HOLA, MI NOMBRE ES</span>
+          <h1 class="profile-name">ALEXIS ROSALES</h1>
+          <div class="typed-container">
+            <span class="role-prefix">Especialista en</span>
+            <span ref="typedTarget" class="typed-text"></span>
+          </div>
+        </header>
+
+       <div class="description">
+  <p>
+    Desarrollador <strong>Backend</strong> enfocado en crear el motor que impulsa experiencias digitales. 
+    Diseño arquitecturas escalables y sistemas que no solo funcionan, sino que perduran. 
+    Mi visión <strong>Fullstack</strong> integra esta solidez técnica con interfaces modernas y eficientes.
+  </p>
+</div>
+        <div class="impact-stat">
+          <div class="stat-item">
+            <span class="stat-value">+3</span>
+            <span class="stat-label">Años de Experiencia</span>
+          </div>
+          <div class="stat-divider"></div>
+          <div class="stat-item">
+            <span class="stat-value">APIs</span>
+            <span class="stat-label">Robustas y Seguras</span>
+          </div>
       </div>
-       <!-- <div class="image-wrapper"> -->
-        <!-- <img src="https://res.cloudinary.com/dc4i4wfek/image/upload/v1750857043/me_msgtdp.png" alt="Foto de perfil" /> -->
-         <!-- <img src="" alt=""> -->
-      <!-- </div> -->
+      </section>
 
-    </section>
-    <section class="social-info">
-  <ul class="social-links">
-    <li>
-      <a href="tel:+5493583439544" title="Teléfono" target="_blank">
-        <i class="fas fa-phone"></i>
-      </a>
-    </li>
-    <li>
-      <a href="mailto:dvrklex@gmail.com" title="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
-    </li>
-    <li>
-      <a href="https://www.linkedin.com/in/dvrklex" title="LinkedIn" target="_blank">
-        <i class="fab fa-linkedin"></i>
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/Dvrklex" title="GitHub" target="_blank">
-        <i class="fab fa-github"></i>
-      </a>
-    </li>
-    <li>
-      <a href="https://instagram.com/dvrklex" title="Instagram" target="_blank">
-        <i class="fab fa-instagram"></i>
-      </a>
-    </li>
-    <li>
-      <a href="https://www.google.com/maps/place/R%C3%ADo+Cuarto,+C%C3%B3rdoba" title="Ubicación" target="_blank">
-        <i class="fas fa-map-marker-alt"></i>
-      </a>
-    </li>
-  </ul>
-</section>
-  </header>
+    </main>
+  </section>
 </template>
+
 <script setup>
-  import { onMounted, ref, nextTick } from 'vue'
-  import Typed from 'typed.js'
+import { ref, onMounted, nextTick } from 'vue'
+import Typed from 'typed.js'
 
-  const typedTarget = ref(null)
+const typedTarget = ref(null)
 
-  onMounted(() => {
-    nextTick(() => {
-      const options = {
-        strings: ['Desarrollador de Software', 'Desarrollador Backend', 'Software Developer', 'Backend Developer'],
-        typeSpeed: 50,
-        backSpeed: 30,
-        loop: true,
-        backDelay: 1500,
-        showCursor: true,
-        cursorChar: '|'
-      }
+onMounted(() => {
+  nextTick(() => {
+    if (!typedTarget.value) return
 
-      if (typedTarget.value) {
-        new Typed(typedTarget.value, options)
-      } else {
-        console.warn('⚠️ No se encontró typedTarget')
-      }
+    new Typed(typedTarget.value, {
+      strings: [
+        'Arquitectura Backend',
+        'APIs Escalables',
+        'Sistemas en Tiempo Real',
+        'Desarrollo de Microservicios',
+        'Diseño de Bases de Datos',
+        'Desarrollo Fullstack',
+
+      ],
+      typeSpeed: 60,
+      backSpeed: 40,
+      loop: true,
+      backDelay: 2000,
     })
   })
+})
 </script>
 
 <style scoped>
-  header {
-    max-width: 1000px;
-    margin: auto;
-    padding: 30px 20px;
-    border-radius: 12px;
-    color: #f4f4f4;
-    position: relative;
-    overflow: hidden;
-    background: radial-gradient(circle at top left, #1f1f1f, #111);
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
-    animation: fadeIn 1s ease;
-  }
-
-  header::before {
-    content: "";
-    position: absolute;
-    top: -50px;
-    left: -50px;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,215,0,0.1), transparent);
-    transform: rotate(25deg);
-    z-index: 0;
-  }
-
-  .title {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 20px;
-    margin: auto 50px;
-    flex-wrap: wrap;
-    position: relative;
-    z-index: 1;
-  }
-  .title h1 {
-    font-family: 'Unica One', sans-serif;
-    font-size: 3rem;
-    letter-spacing: 8px;
-    margin: 0;
-    background: linear-gradient(90deg, #f5d742, #c9a227);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    animation: shine 4s infinite ease-in-out;
-    cursor: default;
-    user-select: none;
-  }
-  @keyframes shine {
-    0% { filter: brightness(1); }
-    50% { filter: brightness(1.4); }
-    100% { filter: brightness(1); }
-  }
-  /* .title h1 {
-    font-size: 3rem;
-    font-weight: 900;
-    color: #f5d742;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-    margin: 0;
-  } */
-
-  .title p {
-    font-size: 1.3rem;
-    font-weight: 300;
-    letter-spacing: 1px;
-    color: #ccc;
-    margin: 5px 0 0;
-  }
-
-  .ocupation {
-    font-size: 1.3rem;
-    color: #f5d742;
-    font-weight: 400;
-    letter-spacing: 1px;
-  }
-
-  .image-wrapper {
-  padding: 6px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #f5d742, #c9a227);
-  display: inline-block;
-  box-shadow: 0 0 20px rgba(245, 215, 66, 0.3);
-  animation: haloGlow 3s ease-in-out infinite;
-  transition: transform 0.3s ease;
-}
-
-.image-wrapper:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 30px rgba(245, 215, 66, 0.5);
-}
-
-.image-wrapper img {
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  border: 1px solid #111;
-  display: block;
-}
-
-@keyframes haloGlow {
-  0%, 100% {
-    box-shadow: 0 0 10px rgba(245, 215, 66, 0.3),
-                0 0 20px rgba(245, 215, 66, 0.4);
-  }
-  50% {
-    box-shadow: 0 0 14px rgba(245, 215, 66, 0.4),
-                0 0 30px rgba(245, 215, 66, 0.6);
-  }
-}
-
-  .social-info {
-  margin-top: 30px;
-  text-align: center;
-}
-
-.social-links {
-  list-style: none;
-  padding: 0;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@100;400;700;800&family=Outfit:wght@300;600&display=swap');
+.portfolio-wrapper {
+  font-family: 'Inter', sans-serif;
+  min-height: 80vh;
   display: flex;
-  flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
-  gap: 15px;
-}
-
-.social-links li {
-  background: #1f1f1f;
-  border: 1px solid #ffd700;
-  padding: 12px 22px;
-  border-radius: 10px;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items:center;
-  gap: 12px;
+  padding: 25px;
   position: relative;
-  box-shadow: 0 0 0 transparent;
-
+  overflow: hidden;
 }
 
-.social-links li:hover {
-  background-color: #292929;
-  transform: translateY(-5px) scale(1.05);
-  border-color: #f5d742;
-  box-shadow: 0 0 12px rgba(245, 215, 66, 0.4);
-  cursor: pointer;
-}
-.social-links li:hover i {
-  transform: rotate(-15deg) scale(1.1);
-  color: #ffd700;
-  transition: transform 0.3s ease, color 0.3s ease;
+.profile-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  background: var(--card-glass);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 32px;
+  overflow: hidden;
+  max-width: 1000px;
 }
 
-.social-links a {
-  color: #f5d742;
-  text-decoration: none;
+.sidebar {
+  background: rgba(255, 255, 255, 0.02);
+  padding: 20px 30px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between; 
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  min-height: 100%;
+}
+
+.sidebar-connector {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 15px 0;
+}
+
+.flow-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.node {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 1px;
+  transform: rotate(45deg);
+  box-shadow: 0 0 10px var(--accent);
+  opacity: 0.6;
+}
+
+.main-pipeline {
+  width: 2px;
+  height: 50px;
+  background: rgba(212, 175, 55, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.bit-stream {
+  position: absolute;
+  top: -20px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  background: linear-gradient(to bottom, transparent, var(--accent), transparent);
+  animation: data-flow 3s infinite linear;
+}
+
+.bit-stream.delay {
+  animation-delay: 1.5s;
+}
+
+@keyframes data-flow {
+  0% { top: -20%; opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { top: 120%; opacity: 0; }
+}
+
+.image-wrapper {
+  position: relative;
+  margin-bottom: 30px;
+  padding: 10px;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), transparent);
+  border-radius: 30px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.profile-img {
+  width: 190px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 20px;
+  filter: drop-shadow(0 15px 30px rgba(0,0,0,0.8)) contrast(105%);
+  transition: all 0.5s ease;
+  position: relative;
+  z-index: 2;
+}
+
+.profile-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.15) 0%, transparent 70%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.image-fader {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: linear-gradient(to top, rgba(17, 17, 17, 0.8), transparent);
+  z-index: 3;
+  border-radius: 0 0 20px 20px;
+  pointer-events: none;
+}
+
+.image-wrapper:hover .profile-img {
+  transform: translateY(-5px) scale(1.02);
+  filter: drop-shadow(0 20px 40px rgba(212, 175, 55, 0.2)) contrast(110%);
+}
+
+.status-badge {
+  position: absolute;
+  bottom: 5px; 
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  white-space: nowrap;
+  border: 1px solid var(--accent);
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.95rem;
-  font-weight: 500;
+  color: #ffffff; 
+  z-index: 10; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
-.social-links i {
+.dot {
+  width: 8px;
+  height: 8px;
+  background: #4ade80;
+  border-radius: 50%;
+  position: relative;
+}
+
+.dot::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #4ade80;
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(3);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+.social-stack {
+  display: flex;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.03); 
+  padding: 10px;
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.social-stack a {
+  color: var(--text-dim);
+  font-size: 1.3rem;
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+}
+
+.social-stack a:hover {
+  transform: translateY(-5px) scale(1.1);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--accent);
+}
+
+
+.social-stack a[aria-label="LinkedIn"]:hover { 
+  color: #0077b5; 
+  filter: drop-shadow(0 0 8px rgba(0, 119, 181, 0.5)); 
+}
+.social-stack a[aria-label="GitHub"]:hover { 
+  color: #ffffff; 
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.5)); 
+}
+.social-stack a[aria-label="Email"]:hover { 
+  color: #ea4335; 
+  filter: drop-shadow(0 0 8px rgba(234, 67, 53, 0.5)); 
+}
+.social-stack a[aria-label="Phone"]:hover { 
+  color: #4ade80; 
+  filter: drop-shadow(0 0 8px rgba(74, 222, 128, 0.5)); 
+}
+
+.main-content {
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.greeting {
+  font-weight: 700;
+  letter-spacing: 4px;
+  font-size: 0.75rem;
+  color: var(--accent);
+  display: block;
+  margin-bottom: 10px;
+}
+
+.profile-name {
+  font-size: 4rem;
+  font-weight: 800; 
+  margin: 0;
+  line-height: 1.1;
+  letter-spacing: -0.02em;  
+  text-transform: uppercase;
+  
+  
+  background: linear-gradient(
+    135deg, 
+    var(--text-main) 30%, 
+    rgba(255, 255, 255, 0.5) 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
+  
+  animation: fadeInDown 1.2s ease-out;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.profile-name:hover {
+  transform: translateX(10px);  
+  background: linear-gradient(
+    135deg, 
+    var(--accent) 0%, 
+    var(--text-main) 50%
+  );
+  -webkit-background-clip: text;
+  filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.15));
+}
+
+ 
+.profile-name::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 60px;  
+  height: 4px;
+  background: var(--accent);
+  border-radius: 2px;
+  transition: width 0.4s ease;
+}
+
+.profile-name:hover::after {
+  width: 120px;  
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.typed-container {
+  margin: 15px 0 30px;
   font-size: 1.2rem;
-  transition: color 0.3s ease;
+  height: 1.5rem;
 }
 
-.social-links li:hover i {
-  color: #ffd100;
+.role-prefix {
+  color: var(--text-dim);
+  margin-right: 8px;
 }
-@media screen and (max-width: 600px) {
-  .title {
-    text-align: center;
+
+.typed-text {
+  color: var(--text-main);
+  border-bottom: 2px solid var(--accent);
+}
+
+.description {
+  color: var(--text-dim);
+  line-height: 1.4;
+  font-size: 1rem;
+  max-width: 500px;
+}
+
+.description strong {
+  color: var(--text-main);
+}
+
+
+
+.impact-stat {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-top: 30px;
+  padding: 20px;
+  background: rgba(212, 175, 55, 0.03);
+  border-radius: 20px;
+  border: 1px solid rgba(212, 175, 55, 0.08);
+  max-width: fit-content;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-value {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--accent);
+}
+
+.stat-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-dim);
+}
+
+.stat-divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+}
+@media (max-width: 900px) {
+  .portfolio-wrapper {
+    padding: 10px;
+    align-items: flex-start;  
   }
-  header img {
-    margin: auto;
+
+  .profile-grid {
+    grid-template-columns: 1fr;  
+    border-radius: 24px;
+    margin-top: 20px;
   }
-  .social-links {
+
+  .sidebar {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 40px 20px;
     flex-direction: column;
     gap: 20px;
   }
 
-  .social-links li {
-    width: 90%;
+   .sidebar-connector {
+    display: none;
+  }
+
+  .profile-img {
+    width: 160px; 
+    height: 210px;
+  }
+
+  .main-content {
+    padding: 40px 20px;
+    text-align: center;
+    align-items: center; 
+  }
+
+  .profile-name {
+    font-size: 2.8rem;
+    text-align: center;
+  }
+  .profile-name::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .profile-name:hover {
+    transform: none;
+  }
+  .typed-container {
     justify-content: center;
+    font-size: 1rem;
+    height: auto;
+    min-height: 3rem; 
   }
 
-  .social-links a {
-    font-size: 1.1rem;
+  .description {
+    font-size: 1rem;
+    max-width: 100%;
   }
 
-  .social-links i {
-    font-size: 1.5rem;
+  .impact-stat {
+    flex-direction: row;  
+    justify-content: center;
+    width: 100%;
+    gap: 15px;
+  }
+
+  .stat-value {
+    font-size: 1.2rem;
   }
 }
 
+@media (max-width: 480px) {
+  
+
+  .social-stack {
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .impact-stat {
+    display: grid;
+    grid-template-columns: 1fr;  
+    gap: 10px;
+  }
+
+  .stat-divider {
+    width: 80%;
+    height: 1px;
+    margin: 5px auto;
+  }
+
+  .stat-item {
+    align-items: center;
+  }
+}
 </style>

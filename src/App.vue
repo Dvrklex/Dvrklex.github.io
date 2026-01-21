@@ -1,4 +1,6 @@
 <template>
+  <NeuralBackground />
+
   <div>
     <div v-if="showLoader" class="loader-screen">
       <div class="loader-content">
@@ -8,11 +10,11 @@
     </div>
 
     <!-- Tu contenido principal se muestra cuando el loader desaparece -->
-    <div v-else id="app">
+    <div v-else id="app app-content">
       <NavBar />
       <Header />
       <main>
-        <Profile />
+        <!-- <Profile /> -->
         <Experience />
         <Education />
         <Skills />
@@ -35,6 +37,7 @@ import Skills from './components/Skills.vue'
 import Contact from './components/Contact.vue'
 import Projects from './components/Projects.vue'
 import ComingSoon from './components/ComingSoon.vue'
+import NeuralBackground from './components/NeuralBackground.vue'
 import { ref, onMounted } from 'vue'
 
 const showLoader = ref(true)
@@ -60,6 +63,11 @@ onMounted(() => {
       line-height: 1.6;
       transition: background 0.3s ease;
   }
+  .app-content {
+  position: relative;
+  z-index: 5;
+}
+
   .loader-screen {
   position: fixed;
   top: 0;

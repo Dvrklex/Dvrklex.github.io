@@ -3,8 +3,16 @@
   --light-yellow : #f8d66d;
   --secondary:rgb(231, 154, 11);
   --white: white;
+  --gold: #d4af37;
+  --gold-bright: #ffdf00;
+  --card-bg: rgba(30, 30, 30, 0.7);
+  --accent: #d4af37;  
+  --bg-dark: #0a0a0c;
+  --card-glass: rgba(23, 23, 26, 0.7);
+  --text-main: #f4f4f5;
+  --text-dim: #a1a1aa;
+}
 
- }
 
 body {
     margin: 0;
