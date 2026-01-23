@@ -64,10 +64,12 @@
         { name: 'Celery', icon: 'fa fa-code'},
         { name: 'Selenium', icon: 'fa fa-code'},
         { name: 'WebSocket', icon: 'fa fa-code'},
-        { name: 'SocketIO', icon: 'fa fa-code'}
+        { name: 'SocketIO', icon: 'fa fa-code'},
+        { name: 'Vue.js', icon: 'fab fa-vuejs'},
+        { name: 'Bootstrap', icon: 'fab fa-bootstrap'}
     ]
     const others = [
-        { name: 'Visual Studio Code', icon: 'fa fa-keyboard'},
+        { name: 'VS Code', icon: 'fa fa-keyboard'},
         { name: 'Adobe XD', icon: 'fa fa-keyboard'},
         { name: 'DBeaver', icon: 'fas fa-database'},
         { name: 'Git', icon: 'fab fa-git'},
@@ -75,7 +77,7 @@
     ]
     const sections = [
       { label: 'Lenguajes y Tecnologías Core', icon: 'fas fa-terminal', data: tecnologies },
-      { label: 'Frameworks y Librerías Backend', icon: 'fas fa-layer-group', data: frameworks },
+      { label: 'Frameworks y Librerías', icon: 'fas fa-layer-group', data: frameworks },
       { label: 'Herramientas y Entorno', icon: 'fas fa-tools', data: others }
     ]
 </script>

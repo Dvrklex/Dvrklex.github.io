@@ -103,6 +103,12 @@ function animate() {
 }
 
 onMounted(() => {
+
+  if (window.innerWidth < 768) {
+    if (cursor.value) cursor.value.style.display = 'none';
+    return;
+  }
+  
   const c = canvas.value
   ctx = c.getContext('2d')
 
@@ -145,22 +151,29 @@ onBeforeUnmount(() => {
 </script>
 
 <style scoped>
-.neural-canvas {
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 0;
-}
+  .neural-canvas {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
 
-.cursor {
-  position: fixed;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: white;
-  box-shadow: 0 0 14px #7aa2ff;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 10000;
-}
+  .cursor {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 0 14px #7aa2ff;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    z-index: 10000;
+  }
+
+  @media (max-width: 767px) {
+    .neural-canvas, .cursor {
+      display: none !important;
+    }
+  }
+
 </style>
