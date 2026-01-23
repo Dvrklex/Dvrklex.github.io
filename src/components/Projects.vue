@@ -57,7 +57,7 @@ const projects = [
     title: 'Portfolio',
     description: 'SPA responsiva desarrollada con Vue.js 3, enfocada en la optimización de componentes, animaciones fluidas con AOS y despliegue automatizado mediante GitHub Pages.',
     technologies: ['Vue.js', 'JavaScript', 'Github'],
-    image: '../../public/projects/dvrklex-project.png',
+    image: '/projects/dvrklex-project.png',
     demo: 'https://dvrklex.github.io/',
     repo: 'https://github.com/Dvrklex/Dvrklex.github.io',
     date: '2025'
