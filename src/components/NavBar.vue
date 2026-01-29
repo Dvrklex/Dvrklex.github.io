@@ -14,7 +14,7 @@
           >
             <div class="btn-content">
               <i class="fa-solid fa-download"></i>
-              <span>CV</span>
+              <span> CV</span>
             </div>
             <div class="btn-shimmer"></div>
           </button>

@@ -1,3 +1,32 @@
+<script setup>
+const experiences = [
+  {
+    id: 1,
+    role: 'Desarrollador Backend',
+    icon: 'fas fa-code',
+    date: 'Septiembre 2023 - Actualidad',
+    items: [
+      'Diseño e implementación de APIs RESTful en Flask/PostgreSQL garantizando alta disponibilidad.',
+      'Automatización de flujos complejos con Celery y tareas programadas.',
+      'Sistemas en tiempo real mediante WebSockets para módulos interactivos.',
+      'Optimización avanzada de consultas SQL y monitoreo de performance.',
+      'Integración de LLMs y arquitecturas de microservicios con autenticación JWT.'
+    ]
+  },
+  {
+    id: 2,
+    role: 'Técnico en Computación',
+    icon: 'fas fa-tools',
+    date: 'Febrero 2018 - Julio 2024',
+    items: [
+      'Mantenimiento crítico y diagnóstico de hardware de alto rendimiento.',
+      'Resolución de problemas complejos de software y optimización de sistemas.',
+      'Gestión técnica de presupuestos y asesoramiento especializado.'
+    ]
+  }
+]
+
+</script>
 <template>
   <main>
     <section class="timeline" data-aos="fade-up">
@@ -10,42 +39,33 @@
       <div class="timeline-container">
         <div class="vertical-line"></div>
 
-        <div class="timeline-item">
-          <div class="timeline-icon"><i class="fas fa-code"></i></div>
-          <div class="timeline-content">
-            <div class="content-header">
-              <h3>Desarrollador Backend</h3>
-              <span class="date-badge">Septiembre 2023 - Actualidad</span>
-            </div>
-            <ul>
-              <li>Diseño e implementación de <strong>APIs RESTful</strong> en Flask/PostgreSQL garantizando alta disponibilidad.</li>
-              <li>Automatización de flujos complejos con <strong>Celery</strong> y tareas programadas.</li>
-              <li>Sistemas en tiempo real mediante <strong>WebSockets</strong> para módulos interactivos.</li>
-              <li>Optimización avanzada de consultas SQL y monitoreo de performance.</li>
-              <li>Integración de <strong>LLMs</strong> y arquitecturas de microservicios con autenticación JWT.</li>
-            </ul>
+        <div
+          v-for="exp in experiences"
+          :key="exp.id"
+          class="timeline-item"
+        >
+          <div class="timeline-icon">
+            <i :class="exp.icon"></i>
           </div>
-        </div>
 
-        <div class="timeline-item">
-          <div class="timeline-icon"><i class="fas fa-tools"></i></div>
           <div class="timeline-content">
             <div class="content-header">
-              <h3>Técnico en Computación</h3>
-              <span class="date-badge">Febrero 2018 - Julio 2024</span>
+              <h3>{{ exp.role }}</h3>
+              <span class="date-badge">{{ exp.date }}</span>
             </div>
+
             <ul>
-              <li>Mantenimiento crítico y diagnóstico de hardware de alto rendimiento.</li>
-              <li>Resolución de problemas complejos de software y optimización de sistemas.</li>
-              <li>Gestión técnica de presupuestos y asesoramiento especializado.</li>
+              <li v-for="(item, index) in exp.items" :key="index">
+                {{ item }}
+              </li>
             </ul>
           </div>
         </div>
-      </div>
+</div>
+
     </section>
   </main>
 </template>
-
 
 <style scoped>
 main {

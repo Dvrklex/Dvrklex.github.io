@@ -51,15 +51,18 @@
 </div>
         <div class="impact-stat">
           <div class="stat-item">
-            <span class="stat-value">+3</span>
-            <span class="stat-label">Años de Experiencia</span>
+            <span class="stat-value">Backend</span>
+            <span class="stat-label">Rol Principal</span>
           </div>
+
           <div class="stat-divider"></div>
+
           <div class="stat-item">
-            <span class="stat-value">APIs</span>
-            <span class="stat-label">Robustas y Seguras</span>
+            <span class="stat-value">Frontend</span>
+            <span class="stat-label">Integración & Desarrollo</span>
           </div>
-      </div>
+        </div>
+
       </section>
 
     </main>
@@ -79,12 +82,8 @@ onMounted(() => {
     new Typed(typedTarget.value, {
       strings: [
         'Arquitectura Backend',
-        'APIs Escalables',
-        'Sistemas en Tiempo Real',
-        'Desarrollo de Microservicios',
-        'Diseño de Bases de Datos',
-        'Desarrollo Fullstack',
-
+        'Ingeniería Fullstack',
+        'Sistemas en Tiempo Real'
       ],
       typeSpeed: 60,
       backSpeed: 40,

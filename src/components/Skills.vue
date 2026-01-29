@@ -38,48 +38,77 @@
 <script setup>
   import { ref } from 'vue'
 
-    const activeSection = ref(0) // Controla qué grupo está expandido
+const activeSection = ref(0)
+const toggleSection = (index) => {
+  activeSection.value = activeSection.value === index ? null : index
+}
 
-    const toggleSection = (index) => {
-      activeSection.value = activeSection.value === index ? null : index
-    }
-    const tecnologies = [
-        { name: 'Python', icon: 'fab fa-python' },
-        { name: 'JavaScript', icon: 'fab fa-js' },
-        { name: 'HTML5', icon: 'fab fa-html5' },
-        { name: 'CSS3', icon: 'fab fa-css3-alt' },
-        { name: 'Node.js', icon: 'fab fa-node-js' },
-        { name: 'Docker', icon: 'fab fa-docker' },
-        { name: 'Git', icon: 'fab fa-git-alt' },
-        { name: 'PostgreSQL', icon: 'fas fa-database' },
-        { name: 'MySQL', icon: 'fas fa-database' },
+const sections = [
+  {
+    label: 'Lenguajes',
+    icon: 'fas fa-code',
+    data: [
+      { name: 'Python', icon: 'fab fa-python' },
+      { name: 'JavaScript', icon: 'fab fa-js' },
+      { name: 'HTML5', icon: 'fab fa-html5' },
+      { name: 'CSS3', icon: 'fab fa-css3-alt' },
+      { name: 'Bash', icon: 'fas fa-terminal' }
     ]
-    const frameworks = [
-        { name: 'Django', icon: 'fab fa-python'},
-        { name: 'Flask', icon: 'fab fa-python'},
-        { name: 'FastAPI', icon: 'fab fa-python'},
-        { name: 'SQLAlchemy', icon: 'fab fa-python'},
-        { name: 'Sequelize', icon: 'fab fa-node'},
-        { name: 'Express', icon: 'fa fa-code'},
-        { name: 'Celery', icon: 'fa fa-code'},
-        { name: 'Selenium', icon: 'fa fa-code'},
-        { name: 'WebSocket', icon: 'fa fa-code'},
-        { name: 'SocketIO', icon: 'fa fa-code'},
-        { name: 'Vue.js', icon: 'fab fa-vuejs'},
-        { name: 'Bootstrap', icon: 'fab fa-bootstrap'}
+  },
+  {
+    label: 'Backend & APIs',
+    icon: 'fas fa-server',
+    data: [
+      { name: 'Django', icon: 'fab fa-python' },
+      { name: 'Django REST', icon: 'fas fa-exchange-alt' },
+      { name: 'Flask', icon: 'fab fa-python' },
+      { name: 'FastAPI', icon: 'fab fa-python' },
+      { name: 'Express.js', icon: 'fab fa-node-js' },
+      { name: 'Sequelize', icon: 'fas fa-database' }, 
+      { name: 'Celery', icon: 'fas fa-clock' },
+      { name: 'WebSockets', icon: 'fas fa-bolt' },
+      { name: 'Socket.IO', icon: 'fas fa-plug' },
+      { name: 'Análisis de Datos', icon: 'fas fa-chart-line' }
     ]
-    const others = [
-        { name: 'VS Code', icon: 'fa fa-keyboard'},
-        { name: 'Adobe XD', icon: 'fa fa-keyboard'},
-        { name: 'DBeaver', icon: 'fas fa-database'},
-        { name: 'Git', icon: 'fab fa-git'},
-        { name: 'Docker', icon: 'fab fa-docker'}
+  },
+  {
+    label: 'Frontend',
+    icon: 'fas fa-palette',
+    data: [
+      { name: 'Vue.js', icon: 'fab fa-vuejs' },
+      { name: 'PrimeVue', icon: 'fas fa-layer-group' },
+      { name: 'Bootstrap', icon: 'fab fa-bootstrap' }
     ]
-    const sections = [
-      { label: 'Lenguajes y Tecnologías Core', icon: 'fas fa-terminal', data: tecnologies },
-      { label: 'Frameworks y Librerías', icon: 'fas fa-layer-group', data: frameworks },
-      { label: 'Herramientas y Entorno', icon: 'fas fa-tools', data: others }
+  },
+  {
+    label: 'Base de Datos & Infra',
+    icon: 'fas fa-database',
+    data: [
+      { name: 'PostgreSQL', icon: 'fas fa-database' },
+      { name: 'MySQL', icon: 'fas fa-database' },
+      { name: 'Redis', icon: 'fas fa-bolt' },
+      { name: 'AWS S3', icon: 'fab fa-aws' },
+      { name: 'Docker', icon: 'fab fa-docker' },
+      { name: 'CI/CD Pipelines', icon: 'fas fa-code-branch' }
     ]
+  },
+  {
+    label: 'Herramientas & Workflow',
+    icon: 'fas fa-tools',
+    data: [
+      { name: 'Git', icon: 'fab fa-git-alt' },
+      { name: 'Jira', icon: 'fab fa-jira' },
+      { name: 'Postman', icon: 'fas fa-paper-plane' },
+      { name: 'Swagger', icon: 'fas fa-file-code' },
+      { name: 'VS Code', icon: 'fas fa-keyboard' },
+      { name: 'DBeaver', icon: 'fas fa-database' },
+      { name: 'Adobe XD', icon: 'fa fa-image' },
+      { name: 'Figma', icon: 'fa fa-window-maximize' }
+    ]
+  }
+]
+
+
 </script>
 
 <style scoped>

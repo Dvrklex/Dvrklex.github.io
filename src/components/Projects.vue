@@ -18,7 +18,14 @@
           <div class="image-section">
             <img :src="project.image" alt="Preview" class="project-img" />
             <div class="project-status">
-              <span class="status-dot"></span> {{ index === 0 ? 'Latest Work' : 'Archive' }}
+              <span
+                class="status-dot"
+                :class="{
+                  'is-wip': project.status === 'In Progress',
+                  'is-ongoing': project.status === 'Ongoing'
+                }"
+              ></span>
+              {{ project.status || 'Finished' }}
             </div>
           </div>
           
@@ -54,13 +61,34 @@
 <script setup>
 const projects = [
   {
+    title: 'HoyQuiero',
+    description: 'Sistema integral de gestión para locales gastronómicos. Incluye administración de stock con filtros avanzados, gestión de personal por roles y configuración de identidad corporativa. Arquitectura basada en micro-interacciones y un diseño moderno.',
+    technologies: ['Vue.js 3', 'Django', 'Postgres', 'WebSockets'],
+    image: '/projects/hoy-quiero-preview.png', 
+    demo: null, 
+    repo: null,
+    date: '2026',
+    status: 'In Progress'
+  },
+  {
     title: 'Portfolio',
     description: 'SPA responsiva desarrollada con Vue.js 3, enfocada en la optimización de componentes, animaciones fluidas con AOS y despliegue automatizado mediante GitHub Pages.',
     technologies: ['Vue.js', 'JavaScript', 'Github'],
     image: '/projects/dvrklex-project.png',
     demo: 'https://dvrklex.github.io/',
     repo: 'https://github.com/Dvrklex/Dvrklex.github.io',
-    date: '2025'
+    date: '2025',
+    status: 'Finished'
+  },
+  {
+    title: 'Interactive Wallpapers (Wallpaper Engine)',
+    description: 'Colección de wallpapers interactivos desarrollados con HTML, CSS y JavaScript para Wallpaper Engine. Incluye relojes dinámicos, visualizadores de audio y fondos altamente personalizables mediante la integración de propiedades del motor.',
+    technologies: ['HTML', 'CSS', 'JavaScript', 'Wallpaper Engine'],
+    image: '/projects/wallpaper-engine-project.png',
+    demo: 'https://steamcommunity.com/id/Jackotes/myworkshopfiles/',
+    repo: null,
+    date: '2025',
+    status: 'Ongoing'
   }
 ]
 </script>
@@ -78,6 +106,7 @@ main {
 }
 
 /* --- HEADER REFINADO --- */
+
 .projects-header {
   display: flex;
   align-items: center;
@@ -103,6 +132,7 @@ h2 {
 .header-line {
   flex-grow: 1;
   height: 1px;
+
   background: linear-gradient(90deg, var(--accent), transparent);
   opacity: 0.3;
 }
@@ -110,6 +140,7 @@ h2 {
 /* --- BENTO/GLASS CARD --- */
 .project-glass-card {
   display: grid;
+  margin-bottom: 20px;
   grid-template-columns: 320px 1fr;
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
@@ -160,6 +191,31 @@ h2 {
   background: #4caf50;
   border-radius: 50%;
   box-shadow: 0 0 8px #4caf50;
+}
+.status-dot.is-wip {
+  background: #faa628;
+  box-shadow: 0 0 8px #faa628;
+}
+
+.status-dot.is-wip {
+  animation: pulse-wip 2s infinite;
+}
+
+.status-dot.is-ongoing {
+  background: #00e5ff;
+  box-shadow: 0 0 10px #00e5ff;
+  animation: pulse-ongoing 2.5s infinite;
+}
+
+@keyframes pulse-ongoing {
+  0% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.15); opacity: 0.6; }
+  100% { transform: scale(1); opacity: 0.9; }
+}
+@keyframes pulse-wip {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.2); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
 }
 
 /* --- SECCIÓN INFO --- */
