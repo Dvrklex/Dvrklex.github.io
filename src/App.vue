@@ -14,7 +14,7 @@
       <NavBar />
       <Header />
       <main>
-        <!-- <Profile /> -->
+        <Services />
         <Experience />
         <Education />
         <Skills />
@@ -30,13 +30,12 @@
 <script setup>
 import NavBar from './components/NavBar.vue'
 import Header from './components/Header.vue'
-import Profile from './components/Profile.vue'
+import Services from './components/Services.vue'
 import Experience from './components/Experiencie.vue'
 import Education from './components/Education.vue'
 import Skills from './components/Skills.vue'
 import Contact from './components/Contact.vue'
 import Projects from './components/Projects.vue'
-import ComingSoon from './components/ComingSoon.vue'
 import NeuralBackground from './components/NeuralBackground.vue'
 import { ref, onMounted } from 'vue'
 
