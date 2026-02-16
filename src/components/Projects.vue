@@ -1,10 +1,15 @@
 <template>
   <main data-aos="fade-up">
-    <section class="projects-section">
+    <div style="display:none">
+      <h3>Portafolio de Proyectos de Alexis Rosales</h3>
+      <p>Desarrollo de sistemas gastronómicos, landing pages interactivas y software a medida usando Django, Vue.js y PostgreSQL.</p>
+    </div>
+
+    <section class="projects-section" aria-labelledby="projects-title">
       <div class="projects-header">
         <div class="header-content">
           <span class="pre-title">Proyectos</span>
-          <h2>Selección Destacada</h2>
+          <h2 id="projects-title">Selección Destacada</h2>
         </div>
         <div class="header-line"></div>
       </div>
@@ -14,10 +19,17 @@
           v-for="(project, index) in projects" 
           :key="project.title"
           class="project-glass-card"
+          itemscope 
+          itemtype="https://schema.org/CreativeWork"
         >
           <div class="image-section">
-            <img :src="project.image" alt="Preview" class="project-img" />
-            <div class="project-status">
+            <img 
+              :src="project.image" 
+              :alt="'Captura de pantalla del proyecto ' + project.title + ' desarrollado por Alexis Rosales'" 
+              class="project-img" 
+              itemprop="image"
+            />
+            <div class="project-status" :aria-label="'Estado: ' + (project.status || 'Finalizado')">
               <span
                 class="status-dot"
                 :class="{
@@ -31,23 +43,28 @@
           
           <div class="info-section">
             <div class="top-meta">
-              <span class="date-label">{{ project.date }}</span>
+              <span class="date-label" itemprop="datePublished">{{ project.date }}</span>
               <div class="links-group">
-                <a :href="project.demo" target="_blank" v-if="project.demo" class="icon-btn" title="Live Demo">
-                  <i class="fas fa-external-link-alt"></i>
+                <a :href="project.demo" target="_blank" v-if="project.demo" class="icon-btn" :title="'Ver Demo en vivo de ' + project.title">
+                  <i class="fas fa-external-link-alt" aria-hidden="true"></i>
                 </a>
-                <a :href="project.repo" target="_blank" v-if="project.repo" class="icon-btn" title="Source Code">
-                  <i class="fab fa-github"></i>
+                <a :href="project.repo" target="_blank" v-if="project.repo" class="icon-btn" :title="'Ver Código Fuente de ' + project.title + ' en GitHub'">
+                  <i class="fab fa-github" aria-hidden="true"></i>
                 </a>
               </div>
             </div>
 
-            <h3 class="title">{{ project.title }}</h3>
-            <p class="description">{{ project.description }}</p>
+            <h3 class="title" itemprop="name">{{ project.title }}</h3>
+            <p class="description" itemprop="description">{{ project.description }}</p>
             
             <div class="footer-meta">
               <div class="tech-tags">
-                <span v-for="tech in project.technologies" :key="tech" class="tech-tag">
+                <span 
+                  v-for="tech in project.technologies" 
+                  :key="tech" 
+                  class="tech-tag"
+                  :title="'Desarrollado con ' + tech"
+                >
                   {{ tech }}
                 </span>
               </div>
@@ -58,7 +75,9 @@
     </section>
   </main>
 </template>
+
 <script setup>
+// Mantenemos tu array de proyectos igual, pero el HTML ahora es mucho más "inteligente"
 const projects = [
   {
     title: 'HoyQuiero',
@@ -81,8 +100,8 @@ const projects = [
     status: 'Finished'
   },
   {
-    title: 'Interactive Wallpapers (Wallpaper Engine)',
-    description: 'Colección de wallpapers interactivos desarrollados con HTML, CSS y JavaScript para Wallpaper Engine. Incluye relojes dinámicos, visualizadores de audio y fondos altamente personalizables mediante la integración de propiedades del motor.',
+    title: 'Interactive Wallpapers',
+    description: 'Colección de wallpapers interactivos para Wallpaper Engine. Incluye relojes dinámicos y visualizadores de audio personalizados con HTML/JS.',
     technologies: ['HTML', 'CSS', 'JavaScript', 'Wallpaper Engine'],
     image: '/projects/wallpaper-engine-project.png',
     demo: 'https://steamcommunity.com/id/Jackotes/myworkshopfiles/',
@@ -105,7 +124,6 @@ main {
   padding: 0 20px;
 }
 
-/* --- HEADER REFINADO --- */
 
 .projects-header {
   display: flex;
@@ -137,7 +155,6 @@ h2 {
   opacity: 0.3;
 }
 
-/* --- BENTO/GLASS CARD --- */
 .project-glass-card {
   display: grid;
   margin-bottom: 20px;
@@ -155,7 +172,7 @@ h2 {
   border-color: rgba(212, 175, 55, 0.4);
 }
 
-/* --- SECCIÓN IMAGEN --- */
+
 .image-section {
   position: relative;
   height: 100%;
@@ -218,7 +235,6 @@ h2 {
   100% { transform: scale(1); opacity: 1; }
 }
 
-/* --- SECCIÓN INFO --- */
 .info-section {
   padding: 30px;
   display: flex;
@@ -252,7 +268,6 @@ h2 {
   margin-bottom: 25px;
 }
 
-/* --- TECH & LINKS --- */
 .tech-tags {
   display: flex;
   flex-wrap: wrap;

@@ -1,5 +1,9 @@
 <template>
   <main data-aos="fade-up">
+    <div style="display:none">
+      <p>Alexis Rosales, desarrollador Fullstack experto en {{ allTechNames }}. 
+         Especializado en Python, Django, Vue.js y arquitectura de bases de datos en Argentina.</p>
+    </div>
     <section class="skills-dashboard">
       <div class="skills-header">
         <span class="pre-title">TECH STACK</span>
@@ -36,13 +40,15 @@
   </main>
 </template>
 <script setup>
-  import { ref } from 'vue'
+  import { ref, computed } from 'vue'
 
 const activeSection = ref(0)
 const toggleSection = (index) => {
   activeSection.value = activeSection.value === index ? null : index
 }
-
+const allTechNames = computed(() => {
+  return sections.flatMap(s => s.data.map(d => d.name)).join(', ')
+})
 const sections = [
   {
     label: 'Lenguajes',
@@ -117,7 +123,19 @@ main {
   margin: auto;
   padding: 20px;
 }
+.section-seo-desc {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  margin-bottom: 15px;
+  padding: 0 10px;
+  line-height: 1.4;
+}
 
+.label-left h3 {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 600;
+}
 .skills-dashboard {
   background: var(--card-glass);
   backdrop-filter: blur(20px);
