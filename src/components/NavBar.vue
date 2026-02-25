@@ -31,7 +31,7 @@ import { useToast } from 'primevue/usetoast'
 const toast = useToast()
 
 const handleDownload = async () => {
-  const fileUrl = "/AlexisRosales-CurriculumVitae.pdf"
+  const fileUrl = "/AlexisRosales-CV-FullStack.pdf"
 
   try {
     // Verificar si el archivo existe
@@ -44,7 +44,7 @@ const handleDownload = async () => {
     // Descargar el archivo
     const link = document.createElement('a')
     link.href = fileUrl
-    link.download = 'AlexisRosales-CurriculumVitae.pdf'
+    link.download = 'AlexisRosales-CV-FullStack.pdf'
     document.body.appendChild(link)
     link.click()
     link.remove()
