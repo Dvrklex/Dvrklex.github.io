@@ -5,6 +5,7 @@
       
       <ul class="nav-links">
         <li><a href="#" class="nav-item">Inicio</a></li>
+        <li><a href="#projects" class="nav-item">Proyectos</a></li>
         <li><a href="#contact" class="nav-item">Contacto</a></li>
         <li>
           <button 

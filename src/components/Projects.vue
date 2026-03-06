@@ -5,7 +5,7 @@
       <p>Desarrollo de sistemas gastronómicos, landing pages interactivas y software a medida usando Django, Vue.js y PostgreSQL.</p>
     </div>
 
-    <section class="projects-section" aria-labelledby="projects-title">
+    <section class="projects-section" aria-labelledby="projects-title" id="projects">
       <div class="projects-header">
         <div class="header-content">
           <span class="pre-title">Proyectos</span>
@@ -13,10 +13,10 @@
         </div>
         <div class="header-line"></div>
       </div>
-
+      <h3 class="group-title">Proyectos para clientes</h3>
       <div class="projects-container">
         <article 
-          v-for="(project, index) in projects" 
+          v-for="(project, index) in clientProjects" 
           :key="project.title"
           class="project-glass-card"
           itemscope 
@@ -72,12 +72,72 @@
           </div>
         </article>
       </div>
+        <h3 class="group-title">Proyectos personales</h3>
+        <div class="projects-container">
+          <article 
+            v-for="(project, index) in personalProjects" 
+            :key="project.title"
+            class="project-glass-card"
+            itemscope 
+            itemtype="https://schema.org/CreativeWork"
+          >
+            <div class="image-section">
+              <img 
+                :src="project.image" 
+                :alt="'Captura de pantalla del proyecto ' + project.title + ' desarrollado por Alexis Rosales'" 
+                class="project-img" 
+                itemprop="image"
+              />
+              <div class="project-status" :aria-label="'Estado: ' + (project.status || 'Finalizado')">
+                <span
+                  class="status-dot"
+                  :class="{
+                    'is-wip': project.status === 'In Progress',
+                    'is-ongoing': project.status === 'Ongoing'
+                  }"
+                ></span>
+                {{ project.status || 'Finished' }}
+              </div>
+            </div>
+            
+            <div class="info-section">
+              <div class="top-meta">
+                <span class="date-label" itemprop="datePublished">{{ project.date }}</span>
+                <div class="links-group">
+                  <a :href="project.demo" target="_blank" v-if="project.demo" class="icon-btn" :title="'Ver Demo en vivo de ' + project.title">
+                    <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+                  </a>
+                  <a :href="project.repo" target="_blank" v-if="project.repo" class="icon-btn" :title="'Ver Código Fuente de ' + project.title + ' en GitHub'">
+                    <i class="fab fa-github" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+
+              <h3 class="title" itemprop="name">{{ project.title }}</h3>
+              <p class="description" itemprop="description">{{ project.description }}</p>
+              
+              <div class="footer-meta">
+                <div class="tech-tags">
+                  <span 
+                    v-for="tech in project.technologies" 
+                    :key="tech" 
+                    class="tech-tag"
+                    :title="'Desarrollado con ' + tech"
+                  >
+                    {{ tech }}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </article>
+          </div>
     </section>
   </main>
 </template>
 
 <script setup>
-// Mantenemos tu array de proyectos igual, pero el HTML ahora es mucho más "inteligente"
+import { computed } from 'vue'
+
 const projects = [
   {
     title: 'HoyQuiero',
@@ -87,7 +147,8 @@ const projects = [
     demo: null, 
     repo: null,
     date: '2026',
-    status: 'In Progress'
+    status: 'In Progress',
+    type: 'personal'
   },
   {
     title: 'Portfolio',
@@ -97,7 +158,8 @@ const projects = [
     demo: 'https://dvrklex.github.io/',
     repo: 'https://github.com/Dvrklex/Dvrklex.github.io',
     date: '2025',
-    status: 'Finished'
+    status: 'Finished',
+    type: 'personal'
   },
   {
     title: 'Interactive Wallpapers',
@@ -107,9 +169,28 @@ const projects = [
     demo: 'https://steamcommunity.com/id/Jackotes/myworkshopfiles/',
     repo: null,
     date: '2025',
-    status: 'Ongoing'
+    status: 'Ongoing',
+    type: 'personal'
+  },
+  {
+    title: 'RedPhone - Rio Cuarto',
+    description: 'Sitio web para cliente (tienda/local) orientado a convertir visitas en consultas por WhatsApp. Incluye catálogo actualizado desde Google Sheets, diseño mobile-first y configuración completa de dominio y DNS. Deploy en Vercel con flujo de trabajo en GitHub.',
+    technologies: ['Vue.js 3', 'Vite', 'Vercel', 'GitHub', 'Google Sheets'],
+    image: '/projects/redphone-logo.png',
+    demo: 'https://redphonerc.com/',
+    repo: null,
+    date: '2026',
+    status: 'Finished',
+    type: 'client'
   }
 ]
+const clientProjects = computed(() =>
+  projects.filter(p => p.type === 'client')
+)
+
+const personalProjects = computed(() =>
+  projects.filter(p => p.type === 'personal')
+)
 </script>
 <style scoped>
 :emphasis {
@@ -172,7 +253,13 @@ h2 {
   border-color: rgba(212, 175, 55, 0.4);
 }
 
-
+.group-title{
+  margin: 10px 0 18px;
+  color:#fff;
+  font-size:1rem;
+  letter-spacing:1px;
+  opacity:.9;
+}
 .image-section {
   position: relative;
   height: 100%;
