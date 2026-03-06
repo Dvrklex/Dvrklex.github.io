@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://dvrklex.github.io/</loc>
-    <lastmod>2026-02-16</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>1.0</priority>
-  </url>
+<url>
+<loc>https://dvrklex.github.io/</loc>
+<lastmod>2025-06-08T14:05:52-03:00</lastmod>
+</url>
+<url>
+<loc>https://dvrklex.github.io/AlexisRosales-CV-FullStack.pdf</loc>
+<lastmod>2026-03-06T20:51:57+00:00</lastmod>
+</url>
+<url>
+<loc>https://dvrklex.github.io/projects/AlexisRosales-CV-FullStack.pdf</loc>
+<lastmod>2026-03-06T20:51:57+00:00</lastmod>
+</url>
 </urlset>
