@@ -214,9 +214,9 @@ const handleDownload = async () => {
   text-shadow: 0 0 8px rgba(245, 215, 66, 0.4);
 }
 
-@media (max-width: 600px) {
-  .logo { font-size: 1.3rem; }
-  .nav-links { gap: 15px; }
+@media (max-width: 480px){
+  .logo { display: none; }
+  .nav-links { gap: 15px; justify-content: center; margin: 0 auto;}
   .cv-button span { display: none; }
 }
 </style>

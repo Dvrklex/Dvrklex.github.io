@@ -12,9 +12,11 @@ jobs:
     steps:
       - name: 📥 Checkout repo
         uses: actions/checkout@v3
+        with: 
+          fetch-depth: 0
 
       - name: 🟢 Set up Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
@@ -24,6 +26,13 @@ jobs:
       - name: 🔨 Build project
         run: npm run build
 
+      - name: 🗺️ Generate Sitemap
+        uses: cicirello/generate-sitemap@v1
+        with:
+          base-url-path: https://dvrklex.github.io/
+          path-to-root: dist 
+          drop-html-extension: true
+          
       - name: 🚀 Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
