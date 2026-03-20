@@ -1,15 +1,11 @@
 <template>
   <NeuralBackground />
-
   <div>
     <div v-if="showLoader" class="loader-screen">
-      <div class="loader-content">
-        <h1>DVRKLEX</h1>
-        <p class="dots">Cargando</p>
-      </div>
+      <LoaderBg />
+      
     </div>
 
-    <!-- Tu contenido principal se muestra cuando el loader desaparece -->
     <div v-else id="app app-content">
       <NavBar />
       <Header />
@@ -18,7 +14,6 @@
         <Experience />
         <Education />
         <Skills />
-        <!-- <ComingSoon /> -->
         <Projects />
         <Contact />
       </main>
@@ -38,13 +33,13 @@ import Contact from './components/Contact.vue'
 import Projects from './components/Projects.vue'
 import NeuralBackground from './components/NeuralBackground.vue'
 import { ref, onMounted } from 'vue'
-
+import LoaderBg from './components/LoaderBg.vue'
 const showLoader = ref(true)
 
 onMounted(() => {
   setTimeout(() => {
     showLoader.value = false
-  }, 1500)
+  }, 2600)
 })
 </script>
 
@@ -67,7 +62,7 @@ onMounted(() => {
   z-index: 5;
 }
 
-  .loader-screen {
+  /* .loader-screen {
   position: fixed;
   top: 0;
   left: 0;
@@ -142,7 +137,7 @@ onMounted(() => {
 @keyframes popIn {
   0% { opacity: 0; transform: scale(0.9); }
   100% { opacity: 1; transform: scale(1); }
-}
+} */
 .cv-toast {
     position: fixed;
     bottom: 40px;

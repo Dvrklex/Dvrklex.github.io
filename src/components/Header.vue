@@ -27,6 +27,7 @@
         <div class="social-stack">
           <a href="https://www.linkedin.com/in/dvrklex" target="_blank" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
           <a href="https://github.com/Dvrklex" target="_blank" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          <a href="https://www.instagram.com/dvrklex" target="_blank" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
           <a href="mailto:alexis.rosales.dev@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
           <a href="tel:+5493583439544" aria-label="Phone"><i class="fa-solid fa-phone"></i></a>
         </div>
@@ -334,6 +335,10 @@ onMounted(() => {
 .social-stack a[aria-label="Phone"]:hover { 
   color: #4ade80; 
   filter: drop-shadow(0 0 8px rgba(74, 222, 128, 0.5)); 
+}
+.social-stack a[aria-label="Instagram"]:hover { 
+  color: #e1306c; 
+  filter: drop-shadow(0 0 8px rgba(225, 48, 108, 0.5)); 
 }
 
 .main-content {
