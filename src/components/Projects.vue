@@ -176,7 +176,7 @@ const projects = [
     title: 'RedPhone - Rio Cuarto',
     description: 'Sitio web para cliente (tienda/local) orientado a convertir visitas en consultas por WhatsApp. Incluye catálogo actualizado desde Google Sheets, diseño mobile-first y configuración completa de dominio y DNS. Deploy en Vercel con flujo de trabajo en GitHub.',
     technologies: ['Vue.js 3', 'Vite', 'Vercel', 'GitHub', 'Google Sheets'],
-    image: '/projects/redphone-logo.png',
+    image: '/projects/redphone.png',
     demo: 'https://redphonerc.com/',
     repo: null,
     date: '2026',
