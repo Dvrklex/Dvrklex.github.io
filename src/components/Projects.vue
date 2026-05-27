@@ -139,12 +139,23 @@
 import { computed } from 'vue'
 
 const projects = [
+  // {
+  //   title: 'HoyQuiero',
+  //   description: 'Sistema integral de gestión para locales gastronómicos. Incluye administración de stock con filtros avanzados, gestión de personal por roles y configuración de identidad corporativa. Arquitectura basada en micro-interacciones y un diseño moderno.',
+  //   technologies: ['Vue.js 3', 'Django', 'Postgres', 'WebSockets'],
+  //   image: '/projects/hoy-quiero-preview.png', 
+  //   demo: null, 
+  //   repo: null,
+  //   date: '2026',
+  //   status: 'In Progress',
+  //   type: 'personal'
+  // },
   {
-    title: 'HoyQuiero',
-    description: 'Sistema integral de gestión para locales gastronómicos. Incluye administración de stock con filtros avanzados, gestión de personal por roles y configuración de identidad corporativa. Arquitectura basada en micro-interacciones y un diseño moderno.',
-    technologies: ['Vue.js 3', 'Django', 'Postgres', 'WebSockets'],
-    image: '/projects/hoy-quiero-preview.png', 
-    demo: null, 
+    title: 'Default Bit',
+    description: 'Herramienta de dibujo retro basada en la web enfocada en simplificar los primeros pasos en el pixel art. Incluye un lienzo interactivo de resolución acotada, 9 modos de trazo con soporte geométrico, gestión estructural de capas y un conversor de imágenes a mapa de bits. Cuenta con persistencia local automática e internacionalización bilingüe.',
+    technologies: ['Vue.js 3', 'Vite', 'Google Apps Script', 'Google Sheets'],
+    image: '/projects/default-bit-preview.png', 
+    demo: 'https://defaultbit.netlify.app/', 
     repo: null,
     date: '2026',
     status: 'In Progress',
