@@ -14,20 +14,20 @@
           <div class="brand-line"></div>
         </div>
 
-        <p class="subtitle">Creative Developer · Building immersive experiences</p>
+        <!-- <p class="subtitle">Creative Developer · Building immersive experiences</p> -->
 
         <div class="progress-shell">
           <div class="progress-track">
             <div class="progress-fill" :style="{ width: `${displayProgress}%` }"></div>
             <div class="progress-glow" :style="{ width: `${displayProgress}%` }"></div>
           </div>
-          <div class="progress-meta">
-            <span>Loading interface</span>
-            <span>{{ Math.round(displayProgress) }}%</span>
-          </div>
+          <!-- <div class="progress-meta"> -->
+            <!-- <span>Loading interface</span> -->
+            <!-- <span>{{ Math.round(displayProgress) }}%</span> -->
+          <!-- </div> -->
         </div>
 
-        <p class="loading-text">{{ loadingText }}</p>
+        <!-- <p class="loading-text">{{ loadingText }}</p> -->
       </div>
     </div>
   </transition>
