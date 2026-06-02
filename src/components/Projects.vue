@@ -153,12 +153,12 @@ const projects = [
   {
     title: 'Default Bit',
     description: 'Herramienta de dibujo retro basada en la web enfocada en simplificar los primeros pasos en el pixel art. Incluye un lienzo interactivo de resolución acotada, 9 modos de trazo con soporte geométrico, gestión estructural de capas y un conversor de imágenes a mapa de bits. Cuenta con persistencia local automática e internacionalización bilingüe.',
-    technologies: ['Vue.js 3', 'Vite', 'Google Apps Script', 'Google Sheets'],
+    technologies: ['Vue.js 3', 'Vite', 'Google Apps Script', 'Google Sheets', 'Vercel'],
     image: '/projects/default-bit-preview.png', 
-    demo: 'https://defaultbit.netlify.app/', 
+    demo: 'https://www.defaultbit.art/', 
     repo: null,
     date: '2026',
-    status: 'In Progress',
+    status: 'Ongoing',
     type: 'personal'
   },
   {
