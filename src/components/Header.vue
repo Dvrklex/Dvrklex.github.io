@@ -5,7 +5,7 @@
       <aside class="sidebar">
         <div class="image-wrapper">
           <div class="profile-glow"></div>
-          <img src="../../public/Yo.png" alt="Alexis Rosales" class="profile-img" />
+          <img src="/Yo.png" alt="Alexis Rosales" class="profile-img" />
           <div class="image-fader"></div>
           <div class="status-badge">
             <span class="dot"></span> Status: Open to work

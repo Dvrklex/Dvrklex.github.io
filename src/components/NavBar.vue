@@ -2,14 +2,14 @@
   <nav class="navbar-container">
     <div class="nav-content">
       <span class="logo" data-text="DVRKLEX">DVRKLEX</span>
-      
+
       <ul class="nav-links">
         <li><a href="#" class="nav-item">Inicio</a></li>
         <li><a href="#projects" class="nav-item">Proyectos</a></li>
         <li><a href="#contact" class="nav-item">Contacto</a></li>
         <li>
-          <button 
-            class="cv-button elite" 
+          <button
+            class="cv-button elite"
             @click="handleDownload"
             aria-label="Descargar Curriculum"
           >
@@ -23,50 +23,27 @@
       </ul>
     </div>
   </nav>
-
-  <Toast position="top-right" group="cv" />
 </template>
+
 <script setup>
-import { useToast } from 'primevue/usetoast'
-
-const toast = useToast()
-
 const handleDownload = async () => {
-  const fileUrl = "/AlexisRosales-CV-FullStack.pdf"
+  const fileUrl = '/AlexisRosales-CV-FullStack.pdf'
 
   try {
-    // Verificar si el archivo existe
-    const res = await fetch(fileUrl, { method: "HEAD" })
+    const res = await fetch(fileUrl, { method: 'HEAD' })
 
     if (!res.ok) {
-      throw new Error("Archivo no encontrado")
+      throw new Error('Archivo no encontrado')
     }
 
-    // Descargar el archivo
     const link = document.createElement('a')
     link.href = fileUrl
     link.download = 'AlexisRosales-CV-FullStack.pdf'
     document.body.appendChild(link)
     link.click()
     link.remove()
-
-    // Toast éxito (azul)
-    toast.add({
-      severity: 'success',     
-      summary: 'Curriculum se descargado correctamente',
-      life: 3000,
-      group: 'cv'
-    })
-
   } catch (err) {
-    // Toast error (rojo)
-    toast.add({
-      severity: 'error',
-      summary: 'No se encontró el archivo',
-      detail: 'Verificá que el CV esté subido correctamente.',
-      life: 3500,
-      group: 'cv'
-    })
+    console.warn('No se pudo descargar el CV:', err)
   }
 }
 </script>

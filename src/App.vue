@@ -1,12 +1,10 @@
 <template>
   <NeuralBackground />
-  <div>
-    <div v-if="showLoader" class="loader-screen">
-      <LoaderBg />
-      
-    </div>
 
-    <div v-else id="app app-content">
+  <div class="app-shell">
+    <LoaderBg v-if="showLoader" />
+
+    <div class="app-content" :class="{ 'content-ready': !showLoader }">
       <NavBar />
       <Header />
       <main>
@@ -57,10 +55,21 @@ onMounted(() => {
       line-height: 1.6;
       transition: background 0.3s ease;
   }
+  .app-shell {
+    position: relative;
+    min-height: 100vh;
+  }
+
   .app-content {
-  position: relative;
-  z-index: 5;
-}
+    position: relative;
+    z-index: 5;
+    opacity: 1;
+    transition: opacity 0.4s ease;
+  }
+
+  .app-content.content-ready {
+    opacity: 1;
+  }
 
   /* .loader-screen {
   position: fixed;

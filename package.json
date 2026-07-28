@@ -4,15 +4,17 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
-    "deploy": "vite build && vite gh-pages"
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "deploy": "astro build && vite gh-pages"
   },
   "dependencies": {
+    "@astrojs/vue": "^5.0.0",
     "@emailjs/browser": "^4.4.1",
     "@fortawesome/fontawesome-free": "^6.7.2",
     "aos": "^2.3.4",
+    "astro": "^5.18.2",
     "emailjs-com": "^3.2.0",
     "primeicons": "^7.0.0",
     "primevue": "^3.53.1",

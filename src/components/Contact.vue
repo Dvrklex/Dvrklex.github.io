@@ -41,20 +41,17 @@
         </div>
 
       </div>
-      <Toast position="bottom-right" group="bl" />
     </section>
   </main>
 </template>
 
 
 <script setup>
-    import { useToast } from 'primevue/usetoast';
     import { ref } from 'vue'
     import emailjs from 'emailjs-com'
 
-    const toast = useToast();
     const form = ref()
-    const success = ref(false)    
+    const success = ref(false)
     const error = ref(false)
 
     const sendEmail = () => {
@@ -66,24 +63,13 @@
       "ANDNz9EJzKwL-TXan"
     )
     .then(() => {
-      toast.add({
-        severity: 'success',
-        summary: 'Enviado correctamente',
-        detail: 'Tu mensaje fue enviado con éxito.',
-        life: 4000,
-        group: 'bl'
-      });
-
+      success.value = true
+      error.value = false
       form.value.reset()
     })
     .catch(() => {
-      toast.add({
-        severity: 'error',
-        summary: 'Error al enviar',
-        detail: 'Ocurrió un problema. Intenta nuevamente.',
-        life: 4000,
-        group: 'bl'
-      });
+      success.value = false
+      error.value = true
     });
 }
 

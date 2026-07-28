@@ -1,36 +1,26 @@
 <template>
-  <transition name="loader-fade">
-    <div v-if="visible" class="planet-loader">
-      <div ref="canvasWrap" class="planet-canvas"></div>
+  <div v-show="visible" class="planet-loader">
+    <div ref="canvasWrap" class="planet-canvas"></div>
 
-      <div class="loader-overlay"></div>
-      <div class="scanlines"></div>
-      <div class="noise"></div>
+    <div class="loader-overlay"></div>
+    <div class="scanlines"></div>
+    <div class="noise"></div>
 
-      <div class="loader-ui">
-        <div class="brand-wrap">
-          <div class="brand-line"></div>
-          <h1 class="brand">DVRKLEX</h1>
-          <div class="brand-line"></div>
+    <div class="loader-ui">
+      <div class="brand-wrap">
+        <div class="brand-line"></div>
+        <h1 class="brand">DVRKLEX</h1>
+        <div class="brand-line"></div>
+      </div>
+
+      <div class="progress-shell">
+        <div class="progress-track">
+          <div class="progress-fill" :style="{ width: `${displayProgress}%` }"></div>
+          <div class="progress-glow" :style="{ width: `${displayProgress}%` }"></div>
         </div>
-
-        <!-- <p class="subtitle">Creative Developer · Building immersive experiences</p> -->
-
-        <div class="progress-shell">
-          <div class="progress-track">
-            <div class="progress-fill" :style="{ width: `${displayProgress}%` }"></div>
-            <div class="progress-glow" :style="{ width: `${displayProgress}%` }"></div>
-          </div>
-          <!-- <div class="progress-meta"> -->
-            <!-- <span>Loading interface</span> -->
-            <!-- <span>{{ Math.round(displayProgress) }}%</span> -->
-          <!-- </div> -->
-        </div>
-
-        <!-- <p class="loading-text">{{ loadingText }}</p> -->
       </div>
     </div>
-  </transition>
+  </div>
 </template>
 
 <script setup>
@@ -54,11 +44,19 @@ const canvasWrap = ref(null)
 const visible = ref(true)
 const displayProgress = ref(0)
 
+const getViewportSize = () => {
+  if (typeof window === 'undefined') {
+    return { width: 1280, height: 720 }
+  }
+
+  return { width: window.innerWidth, height: window.innerHeight }
+}
+
 const pointer = reactive({
-  x: window.innerWidth * 0.5,
-  y: window.innerHeight * 0.5,
-  tx: window.innerWidth * 0.5,
-  ty: window.innerHeight * 0.5,
+  x: getViewportSize().width * 0.5,
+  y: getViewportSize().height * 0.5,
+  tx: getViewportSize().width * 0.5,
+  ty: getViewportSize().height * 0.5,
   nx: 0,
   ny: 0
 })
@@ -147,14 +145,17 @@ const buildPlanetTexture = () => {
 }
 
 const initThree = () => {
+  if (typeof window === 'undefined' || typeof document === 'undefined') return
+
   scene = new THREE.Scene()
   clock = new THREE.Clock()
 
-  camera = new THREE.PerspectiveCamera(42, window.innerWidth / window.innerHeight, 0.1, 100)
+  const viewport = getViewportSize()
+  camera = new THREE.PerspectiveCamera(42, viewport.width / viewport.height, 0.1, 100)
   camera.position.set(0, 0, 8.5)
 
   renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' })
-  renderer.setSize(window.innerWidth, window.innerHeight)
+  renderer.setSize(viewport.width, viewport.height)
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.8))
   renderer.outputColorSpace = THREE.SRGBColorSpace
   renderer.toneMapping = THREE.ACESFilmicToneMapping
@@ -268,6 +269,8 @@ const updateParticles = (time) => {
 }
 
 const animate = () => {
+  if (typeof window === 'undefined') return
+
   animationId = requestAnimationFrame(animate)
 
   const elapsed = clock.getElapsedTime()
@@ -275,10 +278,11 @@ const animate = () => {
   const progress = Math.min(elapsedMs / props.duration, 1)
   displayProgress.value = easeOutCubic(progress) * 100
 
+  const viewport = getViewportSize()
   pointer.tx = lerp(pointer.tx, pointer.x, 0.06)
   pointer.ty = lerp(pointer.ty, pointer.y, 0.06)
-  pointer.nx = (pointer.tx / window.innerWidth) * 2 - 1
-  pointer.ny = -((pointer.ty / window.innerHeight) * 2 - 1)
+  pointer.nx = (pointer.tx / viewport.width) * 2 - 1
+  pointer.ny = -((pointer.ty / viewport.height) * 2 - 1)
 
   if (planetGroup) {
     planetGroup.rotation.y += 0.0032
@@ -327,10 +331,11 @@ const animate = () => {
 }
 
 const handleResize = () => {
-  if (!camera || !renderer) return
-  camera.aspect = window.innerWidth / window.innerHeight
+  if (typeof window === 'undefined' || !camera || !renderer) return
+  const viewport = getViewportSize()
+  camera.aspect = viewport.width / viewport.height
   camera.updateProjectionMatrix()
-  renderer.setSize(window.innerWidth, window.innerHeight)
+  renderer.setSize(viewport.width, viewport.height)
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.8))
 }
 
@@ -341,7 +346,7 @@ const handlePointerMove = (event) => {
 
 const destroyThree = () => {
   if (animationId) cancelAnimationFrame(animationId)
-  if (completeTimeout) window.clearTimeout(completeTimeout)
+  if (completeTimeout && typeof window !== 'undefined') window.clearTimeout(completeTimeout)
 
   if (particleGeometry) particleGeometry.dispose()
 
@@ -374,6 +379,7 @@ const destroyThree = () => {
 }
 
 const start = () => {
+  if (typeof window === 'undefined' || typeof performance === 'undefined') return
   startTime = performance.now()
   initThree()
   animate()
@@ -382,19 +388,24 @@ const start = () => {
 watch(
   () => props.autoStart,
   (value) => {
-    if (value && visible.value && !renderer) start()
+    if (value && visible.value && !renderer && typeof window !== 'undefined') start()
   },
   { immediate: true }
 )
 
 onMounted(() => {
-  window.addEventListener('resize', handleResize)
-  window.addEventListener('pointermove', handlePointerMove, { passive: true })
+  if (props.autoStart && visible.value && !renderer) start()
+  if (typeof window !== 'undefined') {
+    window.addEventListener('resize', handleResize)
+    window.addEventListener('pointermove', handlePointerMove, { passive: true })
+  }
 })
 
 onBeforeUnmount(() => {
-  window.removeEventListener('resize', handleResize)
-  window.removeEventListener('pointermove', handlePointerMove)
+  if (typeof window !== 'undefined') {
+    window.removeEventListener('resize', handleResize)
+    window.removeEventListener('pointermove', handlePointerMove)
+  }
   destroyThree()
 })
 </script>

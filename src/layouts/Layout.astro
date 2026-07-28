@@ -1,0 +1,200 @@
+---
+import "../style.css";
+
+const {
+  title = "Alexis Rosales | Desarrollador Full Stack | Python, Django, Vue",
+  description = "Portfolio de Alexis Rosales. Desarrollador Full Stack especializado en Python, Django, FastAPI, Flask, Vue.js y desarrollo de soluciones web a medida.",
+  image = "/og-preview.jpg",
+  noindex = false,
+} = Astro.props;
+
+const canonical = new URL(Astro.url.pathname, Astro.site);
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Alexis Rosales",
+  jobTitle: "Full Stack Developer",
+  url: "https://dvrklex.github.io/",
+  image: "https://dvrklex.github.io/Yo.png",
+  description,
+  sameAs: [
+    "https://github.com/Dvrklex",
+    "https://www.linkedin.com/in/alexis-rosales-dev/",
+  ],
+  knowsAbout: [
+    "Python",
+    "Django",
+    "FastAPI",
+    "Flask",
+    "Vue.js",
+    "JavaScript",
+    "PostgreSQL",
+    "Docker",
+    "REST API",
+    "Backend",
+    "Frontend",
+    "Full Stack Development"
+  ]
+};
+---
+
+<!doctype html>
+<html lang="es">
+<head>
+
+    <meta charset="UTF-8" />
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1" />
+
+    <meta
+        http-equiv="X-UA-Compatible"
+        content="IE=edge" />
+
+    <meta
+        name="theme-color"
+        content="#0f0f17" />
+
+    <title>{title}</title>
+
+    <meta
+        name="description"
+        content={description} />
+
+    <meta
+        name="author"
+        content="Alexis Rosales" />
+
+    <meta
+        name="robots"
+        content={noindex ? "noindex,nofollow" : "index,follow"} />
+
+    <meta
+        name="keywords"
+        content="
+            Alexis Rosales,
+            Full Stack,
+            Backend,
+            Frontend,
+            Python,
+            Django,
+            FastAPI,
+            Flask,
+            Vue,
+            JavaScript,
+            Docker,
+            PostgreSQL,
+            Landing Pages,
+            Desarrollo Web,
+            API REST,
+            Desarrollador Argentina,
+            Río Cuarto
+        " />
+
+    <link
+        rel="canonical"
+        href={canonical} />
+
+    <!-- Open Graph -->
+
+    <meta
+        property="og:type"
+        content="website" />
+
+    <meta
+        property="og:site_name"
+        content="Alexis Rosales" />
+
+    <meta
+        property="og:locale"
+        content="es_AR" />
+
+    <meta
+        property="og:title"
+        content={title} />
+
+    <meta
+        property="og:description"
+        content={description} />
+
+    <meta
+        property="og:image"
+        content={new URL(image, Astro.site)} />
+
+    <meta
+        property="og:url"
+        content={canonical} />
+
+    <!-- Twitter -->
+
+    <meta
+        name="twitter:card"
+        content="summary_large_image" />
+
+    <meta
+        name="twitter:title"
+        content={title} />
+
+    <meta
+        name="twitter:description"
+        content={description} />
+
+    <meta
+        name="twitter:image"
+        content={new URL(image, Astro.site)} />
+
+    <!-- Favicons -->
+
+    <link
+        rel="icon"
+        href="/favicon.ico" />
+
+    <link
+        rel="apple-touch-icon"
+        href="/apple-touch-icon.png" />
+
+    <!-- Performance -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com" />
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin />
+
+    <link
+        rel="preconnect"
+        href="https://cdnjs.cloudflare.com" />
+
+    <link
+        rel="preload"
+        href="/Yo.png"
+        as="image" />
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Unica+One&family=Inter:wght@300;400;700;900&family=Sora:wght@400;700&display=swap"
+        rel="stylesheet" />
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>" />
+    <!-- Structured Data -->
+
+    <script
+        type="application/ld+json"
+        set:html={JSON.stringify(schema)} />
+
+</head>
+
+<body>
+
+    <slot />
+
+</body>
+</html>

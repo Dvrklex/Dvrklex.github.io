@@ -35,7 +35,17 @@ const initAudio = () => {
   audioCtx = new (window.AudioContext || window.webkitAudioContext)()
 }
 
+const playInteractionSound = () => {
+  if (!audioCtx) return
 
+  oscillator?.stop?.()
+  oscillator = audioCtx.createOscillator()
+  oscillator.type = 'sine'
+  oscillator.frequency.setValueAtTime(440, audioCtx.currentTime)
+  oscillator.connect(audioCtx.destination)
+  oscillator.start()
+  oscillator.stop(audioCtx.currentTime + 0.04)
+}
 
 const initThree = () => {
   scene = new THREE.Scene()
@@ -120,6 +130,7 @@ onMounted(() => {
   initThree()
   window.addEventListener('mousemove', handleMouseMove)
   window.addEventListener('resize', handleResize)
+  window.addEventListener('mousedown', playInteractionSound)
 })
 
 onBeforeUnmount(() => {
@@ -128,6 +139,10 @@ onBeforeUnmount(() => {
   window.removeEventListener('resize', handleResize)
   window.removeEventListener('mousedown', playInteractionSound)
   if (renderer) renderer.dispose()
+  if (audioCtx) {
+    oscillator?.stop?.()
+    audioCtx.close?.()
+  }
 })
 </script>
 
