@@ -2,26 +2,40 @@
 const experiences = [
   {
     id: 1,
-    role: 'Desarrollador Backend',
-    icon: 'fas fa-code',
-    date: 'Septiembre 2023 - Actualidad',
+    role: 'Desarrollador Full Stack Freelancer',
+    icon: 'fas fa-laptop-code',
+    date: 'Enero 2024 - Actualidad',
     items: [
-      'Diseño e implementación de APIs RESTful en Flask/PostgreSQL garantizando alta disponibilidad.',
-      'Automatización de flujos complejos con Celery y tareas programadas.',
-      'Sistemas en tiempo real mediante WebSockets para módulos interactivos.',
-      'Optimización avanzada de consultas SQL y monitoreo de performance.',
-      'Integración de LLMs y arquitecturas de microservicios con autenticación JWT.'
+      'Desarrollo e implementación end-to-end de aplicaciones web y landing pages interactivas en Vue.js para comercios locales, priorizando arquitecturas frontend ultraligeras, altos puntajes de rendimiento (Core Web Vitals) y diseño 100% responsive.',
+      'Integración de Google Sheets API como CMS/backend sin servidor para control de stock e inventario en tiempo real, ofreciendo una solución de gestión funcional y de costo operativo cero para el cliente.',
+      'Estrategias de SEO técnico y posicionamiento local enfocado en estructura de datos y velocidad de carga, impulsando la visibilidad orgánica en búsquedas comerciales.',
+      'Diseño UX/UI orientado a la conversión mediante la creación de componentes interactivos, botones de acción directos y flujos optimizados para la captura de clientes.',
+      'Prototipado rápido y construcción de Productos Mínimos Viables (MVPs) para la prospección comercial, levantamiento de requerimientos y validación de necesidades de negocio.'
     ]
   },
   {
     id: 2,
+    role: 'Desarrollador Backend (Python)',
+    icon: 'fas fa-code',
+    date: 'Septiembre 2023 - Actualidad',
+    items: [
+      'Arquitectura y desarrollo de un sistema de gestión integral (EHR/HIS) para el sector salud (centros médicos públicos y privados), bajo estrictos criterios de escalabilidad, mantenibilidad y alta disponibilidad.',
+      'Diseño e implementación de APIs RESTful con Flask, FastAPI y SQLAlchemy sobre PostgreSQL, construyendo diagramas Entidad-Relación (ER) y modelos relacionales complejos para datos clínicos de alta criticidad.',
+      'Despliegue de microservicios desacoplados con autenticación JWT y bases de datos independientes. Desarrollo de un microservicio especializado en generación de PDFs que descentralizó el procesamiento, liberando entre un 30% y 40% de recursos en los servidores del cliente.',
+      'Implementación de comunicación bidireccional en tiempo real con WebSockets para mensajería interna, notificaciones instantáneas y transmisión de eventos en vivo.',
+      'Automatización de tareas asíncronas y flujos complejos en segundo plano utilizando Celery y planificadores de ejecuciones.',
+      'Integración de Inteligencia Artificial mediante LLMs y técnicas de NLP para análisis de mensajería y extracción automatizada de datos desde PDFs. Aplicación de Prompt Engineering y Fine-Tuning en modelos de OpenAI para asistencia clínica y resúmenes médicos automatizados.'
+    ]
+  },
+  {
+    id: 3,
     role: 'Técnico en Computación',
     icon: 'fas fa-tools',
     date: 'Febrero 2018 - Julio 2024',
     items: [
-      'Mantenimiento crítico y diagnóstico de hardware de alto rendimiento.',
-      'Resolución de problemas complejos de software y optimización de sistemas.',
-      'Gestión técnica de presupuestos y asesoramiento especializado.'
+      'Mantenimiento crítico, diagnóstico avanzado y ensamblado de hardware de alto rendimiento.',
+      'Resolución de incidencias complejas de software, configuración de redes y optimización integral de sistemas.',
+      'Gestión técnica de presupuestos y asesoramiento personalizado para clientes e infraestructura tecnológica.'
     ]
   }
 ]

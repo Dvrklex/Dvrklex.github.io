@@ -1,11 +1,13 @@
 <template>
   <main data-aos="zoom-in">
     <section class="profile">
-      <h2><i class="fa-solid fa-terminal"></i> Perfil profesional</h2>
+      <h2><i class="fa-solid fa-terminal"></i> Perfil Profesional | Desarrollador Backend</h2>
       <p>
-        Soy un desarrollador backend, con experiencia en la construcción de APIs robustas y escalables, bases de datos
-        optimizadas y sistemas en tiempo real con WebSockets. He llevado a cabo el desarrollo de microservicios y la
-        automatización de procesos críticos, mejorando el rendimiento y la eficiencia de los sistemas.
+        Especialista en <strong>desarrollo backend</strong> 
+        enfocado en la arquitectura de <strong>APIs REST robustas y escalables</strong>, 
+        integración de sistemas en tiempo real con <strong>WebSockets</strong> y optimización de bases de datos. 
+        Diseño arquitecturas de <strong>microservicios</strong> y automatizo procesos críticos para maximizar el rendimiento
+        y la eficiencia técnica.
       </p>
     </section>
   </main>

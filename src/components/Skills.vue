@@ -56,46 +56,60 @@ const sections = [
     data: [
       { name: 'Python', icon: 'fab fa-python' },
       { name: 'JavaScript', icon: 'fab fa-js' },
+      { name: 'Bash / Shell', icon: 'fas fa-terminal' },
       { name: 'HTML5', icon: 'fab fa-html5' },
-      { name: 'CSS3', icon: 'fab fa-css3-alt' },
-      { name: 'Bash', icon: 'fas fa-terminal' }
+      { name: 'CSS3', icon: 'fab fa-css3-alt' }
     ]
   },
   {
     label: 'Backend & APIs',
     icon: 'fas fa-server',
     data: [
-      { name: 'Django', icon: 'fab fa-python' },
-      { name: 'Django REST', icon: 'fas fa-exchange-alt' },
-      { name: 'Flask', icon: 'fab fa-python' },
-      { name: 'FastAPI', icon: 'fab fa-python' },
-      { name: 'Express.js', icon: 'fab fa-node-js' },
-      { name: 'Sequelize', icon: 'fas fa-database' }, 
-      { name: 'Celery', icon: 'fas fa-clock' },
-      { name: 'WebSockets', icon: 'fas fa-bolt' },
-      { name: 'Socket.IO', icon: 'fas fa-plug' },
-      { name: 'Análisis de Datos', icon: 'fas fa-chart-line' }
+      { name: 'Django / REST', icon: 'fab fa-python' },
+      { name: 'Flask', icon: 'fas fa-flask' },
+      { name: 'FastAPI', icon: 'fas fa-bolt' },
+      { name: 'Express.js / Node', icon: 'fab fa-node-js' },
+      { name: 'SQLAlchemy', icon: 'fas fa-database' },
+      { name: 'Sequelize', icon: 'fas fa-link' },
+      { name: 'Celery', icon: 'fas fa-tasks' },
+      { name: 'WebSockets / Socket.IO', icon: 'fas fa-plug' }
     ]
   },
   {
-    label: 'Frontend',
-    icon: 'fas fa-palette',
+    label: 'Frontend & UI',
+    icon: 'fas fa-desktop',
     data: [
       { name: 'Vue.js', icon: 'fab fa-vuejs' },
+      { name: 'Pinia', icon: 'fas fa-box-archive' },
+      { name: 'Astro', icon: 'fas fa-rocket' },
       { name: 'PrimeVue', icon: 'fas fa-layer-group' },
+      { name: 'Vuetify', icon: 'fab fa-vuejs' },
       { name: 'Bootstrap', icon: 'fab fa-bootstrap' }
     ]
   },
   {
-    label: 'Base de Datos & Infra',
-    icon: 'fas fa-database',
+    label: 'IA, Data & Testing',
+    icon: 'fas fa-brain',
+    data: [
+      { name: 'LLMs & Fine-Tuning', icon: 'fas fa-robot' },
+      { name: 'Prompt Engineering', icon: 'fas fa-wand-magic-sparkles' },
+      { name: 'Procesamiento NLP', icon: 'fas fa-language' },
+      { name: 'PyTest / Unittest', icon: 'fas fa-vial' },
+      { name: 'Selenium / Automation', icon: 'fas fa-spider' },
+      { name: 'PyPDF2 / PyMuPDF', icon: 'fas fa-file-pdf' }
+    ]
+  },
+  {
+    label: 'Bases de Datos & Cloud',
+    icon: 'fas fa-cloud-upload-alt',
     data: [
       { name: 'PostgreSQL', icon: 'fas fa-database' },
       { name: 'MySQL', icon: 'fas fa-database' },
       { name: 'Redis', icon: 'fas fa-bolt' },
-      { name: 'AWS S3', icon: 'fab fa-aws' },
       { name: 'Docker', icon: 'fab fa-docker' },
-      { name: 'CI/CD Pipelines', icon: 'fas fa-code-branch' }
+      { name: 'AWS S3', icon: 'fab fa-aws' },
+      { name: 'Hosting & Deployments', icon: 'fas fa-cloud' },
+      { name: 'CI/CD (GitLab CI)', icon: 'fas fa-code-branch' }
     ]
   },
   {
@@ -103,13 +117,12 @@ const sections = [
     icon: 'fas fa-tools',
     data: [
       { name: 'Git', icon: 'fab fa-git-alt' },
-      { name: 'Jira', icon: 'fab fa-jira' },
       { name: 'Postman', icon: 'fas fa-paper-plane' },
-      { name: 'Swagger', icon: 'fas fa-file-code' },
-      { name: 'VS Code', icon: 'fas fa-keyboard' },
+      { name: 'OpenAPI / Swagger', icon: 'fas fa-file-code' },
       { name: 'DBeaver', icon: 'fas fa-database' },
-      { name: 'Adobe XD', icon: 'fa fa-image' },
-      { name: 'Figma', icon: 'fa fa-window-maximize' }
+      { name: 'Jira', icon: 'fab fa-jira' },
+      { name: 'Figma', icon: 'fab fa-figma' },
+      { name: 'Adobe XD', icon: 'fas fa-palette' }
     ]
   }
 ]
@@ -231,6 +244,7 @@ main {
   flex-direction: row; 
   align-items: center;
   gap: 10px;
+  width: auto;
 }
 
 .skill-card i {
@@ -243,7 +257,6 @@ main {
   font-size: 0.75rem;
   font-weight: 500;
   color: var(--text-dim);
-  white-space: nowrap;
 }
 
 .skill-card:hover {

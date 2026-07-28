@@ -45,10 +45,12 @@
 
        <div class="description">
   <p>
-    Desarrollador <strong>Backend</strong> enfocado en crear el motor que impulsa experiencias digitales. 
-    Diseño arquitecturas escalables y sistemas que no solo funcionan, sino que perduran. 
-    Mi visión <strong>Fullstack</strong> integra esta solidez técnica con interfaces modernas y eficientes.
-  </p>
+  Como <strong>Desarrollador Full Stack</strong>, 
+  creo aplicaciones web integrales combinando la solidez de una <strong>
+    arquitectura backend escalable</strong> con la agilidad de <strong>
+      interfaces de usuario modernas y dinámicas</strong>. 
+      Transformo lógica de negocio compleja en experiencias digitales fluidas, eficientes y listas para crecer.
+</p>
 </div>
         <div class="impact-stat">
           <div class="stat-item">
