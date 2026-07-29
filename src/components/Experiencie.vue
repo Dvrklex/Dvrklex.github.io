@@ -4,7 +4,7 @@ const experiences = [
     id: 1,
     role: 'Desarrollador Full Stack Freelancer',
     icon: 'fas fa-laptop-code',
-    date: 'Enero 2024 - Actualidad',
+    date: 'Febrero 2026 - Actualidad',
     items: [
       'Desarrollo e implementación end-to-end de aplicaciones web y landing pages interactivas en Vue.js para comercios locales, priorizando arquitecturas frontend ultraligeras, altos puntajes de rendimiento (Core Web Vitals) y diseño 100% responsive.',
       'Integración de Google Sheets API como CMS/backend sin servidor para control de stock e inventario en tiempo real, ofreciendo una solución de gestión funcional y de costo operativo cero para el cliente.',
