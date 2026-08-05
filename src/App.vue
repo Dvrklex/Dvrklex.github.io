@@ -5,10 +5,11 @@
     <LoaderBg v-if="showLoader" />
 
     <div class="app-content" :class="{ 'content-ready': !showLoader }">
-      <NavBar />
       <Header />
+      <NavBar v-show="showNavbar" />
       <main>
-        <Services />
+        <!-- <Services /> -->
+        <Solutions />
         <Experience />
         <Education />
         <Skills />
@@ -24,20 +25,42 @@
 import NavBar from './components/NavBar.vue'
 import Header from './components/Header.vue'
 import Services from './components/Services.vue'
+import Solutions from './components/Solutions.vue'
 import Experience from './components/Experiencie.vue'
 import Education from './components/Education.vue'
 import Skills from './components/Skills.vue'
 import Contact from './components/Contact.vue'
 import Projects from './components/Projects.vue'
 import NeuralBackground from './components/NeuralBackground.vue'
-import { ref, onMounted } from 'vue'
+import { ref, onMounted, onBeforeUnmount } from 'vue'
 import LoaderBg from './components/LoaderBg.vue'
 const showLoader = ref(true)
+const showNavbar = ref(false)
+let removeNavbarScrollListener = null
 
 onMounted(() => {
   setTimeout(() => {
     showLoader.value = false
   }, 2600)
+
+  const header = document.querySelector('.hero')
+  if (header) {
+    const updateNavbarVisibility = () => {
+      showNavbar.value = header.getBoundingClientRect().bottom <= 0
+    }
+
+    updateNavbarVisibility()
+    window.addEventListener('scroll', updateNavbarVisibility, { passive: true })
+    window.addEventListener('resize', updateNavbarVisibility)
+    removeNavbarScrollListener = () => {
+      window.removeEventListener('scroll', updateNavbarVisibility)
+      window.removeEventListener('resize', updateNavbarVisibility)
+    }
+  }
+})
+
+onBeforeUnmount(() => {
+  removeNavbarScrollListener?.()
 })
 </script>
 

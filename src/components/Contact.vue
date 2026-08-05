@@ -77,12 +77,16 @@
 
 <style scoped>
 main {
-  max-width: 900px;  
+  width: 100%;
   margin: auto;
   padding: 40px 20px;
+  background-color: rgba(5, 5, 5, 0.41);
+  backdrop-filter: blur(5px);
 }
 
 .contact-container {
+  max-width: 900px;  
+  margin: auto;
   background: var(--card-glass);
   backdrop-filter: blur(20px);
   border-radius: 24px;

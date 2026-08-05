@@ -49,12 +49,16 @@ const handleDownload = async () => {
 </script>
 <style scoped>
 .navbar-container {
-  position: sticky;
+  position: fixed;
   top: 15px;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
   z-index: 999;
   max-width: 900px;
   margin: 0 auto;
   padding: 0 15px;
+  transition: all 0.3s ease;
 }
 
 .nav-content {
