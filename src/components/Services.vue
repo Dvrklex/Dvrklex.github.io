@@ -11,67 +11,7 @@
         <h2 class="glitch-title" data-aos="fade-up" data-aos-delay="300">
           Abierto a Proyectos Freelance
         </h2>
-        
-        <p class="section-desc" data-aos="fade-up" data-aos-delay="400">
-          Acompaño a profesionales y empresas en su crecimiento digital, 
-          desarrollando experiencias web modernas y sistemas funcionales 
-          que convierten visitas en oportunidades.
-        </p>
       </div>
-
-      <div class="services-grid">
-        <div class="service-card" data-aos="fade-up" data-aos-delay="500">
-          <div class="card-icon"><i class="fa-solid fa-laptop-code"></i></div>
-          <h3>Experiencia Web & Landing</h3>
-          <p>
-            Diseño interfaces modernas, claras y orientadas a conversión.
-            Cada sección está pensada para transmitir profesionalismo
-            y generar confianza desde el primer impacto.
-          </p>
-          <ul class="features">
-            <li><i class="fa-solid fa-check"></i> Diseño visual estratégico</li>
-            <li><i class="fa-solid fa-check"></i> Formularios funcionales con envío directo</li>
-            <li><i class="fa-solid fa-check"></i> Pago único y transparente</li>
-          </ul>
-          <div class="card-glow"></div>
-        </div>
-
-        <div class="service-card featured" data-aos="fade-up" data-aos-delay="600">
-          <div class="card-icon"><i class="fa-solid fa-code-branch"></i></div>
-          <h3>Colaboración Estratégica</h3>
-          <p>Soporte técnico para agencias de marketing que buscan delegar el desarrollo de alta complejidad.</p>
-          <ul class="features">
-            <li><i class="fa-solid fa-check"></i> Escalabilidad garantizada</li>
-            <li><i class="fa-solid fa-check"></i> Integración fluida en equipos</li>
-            <li><i class="fa-solid fa-check"></i> Escalabilidad futura</li>
-            <li><i class="fa-solid fa-check"></i> Enfoque a largo plazo</li>
-          </ul>
-          <div class="card-glow"></div>
-        </div>
-
-        <div class="service-card" data-aos="fade-up" data-aos-delay="700">
-          <div class="card-icon"><i class="fa-solid fa-gears"></i></div>
-          <h3>Sistemas a Medida</h3>
-          <p>
-            Desarrollo soluciones personalizadas que optimizan procesos,
-            automatizan tareas y permiten escalar digitalmente sin límites.
-          </p>
-          <ul class="features">
-            <li><i class="fa-solid fa-check"></i> Automatización de procesos clave</li>
-            <li><i class="fa-solid fa-check"></i> Paneles internos y gestión centralizada</li>
-            <li><i class="fa-solid fa-check"></i> Escalabilidad y evolución futura</li>
-          </ul>
-          <div class="card-glow"></div>
-        </div>
-      </div>
-
-      <div class="cta-wrapper" data-aos="zoom-up" data-aos-delay="800">
-        <button @click="scrollToContact" class="cta-button">
-          <span>Iniciar Colaboración</span>
-          <i class="fa-solid fa-arrow-right"></i>
-        </button>
-      </div>
-
     </div>
   </section>
 </template>
@@ -224,25 +164,84 @@ const scrollToContact = () => {
 }
 
 .cta-button {
+  --button-gold: #d4af37;
+  --button-light: #f6d365;
   cursor: pointer;
-  border: none;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border: 1px solid rgba(255, 235, 159, 0.72);
   display: inline-flex;
   align-items: center;
   gap: 12px;
   padding: 18px 36px;
-  background: var(--accent);
+  background: linear-gradient(135deg, var(--button-light), var(--button-gold) 52%, #ad7a16);
   color: #111;
   font-family: inherit;
   font-weight: 700;
+  letter-spacing: 0.02em;
   border-radius: 50px;
-  transition: all 0.3s ease;
-  box-shadow: 0 10px 20px rgba(212, 175, 55, 0.2);
+  box-shadow:
+    0 10px 20px rgba(212, 175, 55, 0.2),
+    0 2px 0 rgba(96, 62, 6, 0.48),
+    inset 0 1px 1px rgba(255, 255, 255, 0.42);
+  transition: transform 220ms ease, box-shadow 220ms ease, filter 220ms ease;
+}
+
+.cta-button::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: -60%;
+  left: -45%;
+  width: 38%;
+  height: 220%;
+  background: rgba(255, 255, 255, 0.58);
+  transform: rotate(25deg) translateX(-260%);
+  transition: transform 560ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cta-button i {
+  font-size: 0.9rem;
+  transition: transform 220ms ease;
 }
 
 .cta-button:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px rgba(212, 175, 55, 0.4);
-  background: #eec441; 
+  transform: translateY(-4px);
+  filter: saturate(1.12) brightness(1.05);
+  box-shadow:
+    0 18px 32px rgba(212, 175, 55, 0.38),
+    0 3px 0 rgba(96, 62, 6, 0.42),
+    inset 0 1px 1px rgba(255, 255, 255, 0.55);
+}
+
+.cta-button:hover::before {
+  transform: rotate(25deg) translateX(620%);
+}
+
+.cta-button:hover i {
+  transform: translateX(5px);
+}
+
+.cta-button:active {
+  transform: translateY(1px) scale(0.98);
+  box-shadow:
+    0 7px 14px rgba(212, 175, 55, 0.28),
+    0 1px 0 rgba(96, 62, 6, 0.42),
+    inset 0 2px 5px rgba(101, 66, 5, 0.2);
+}
+
+.cta-button:focus-visible {
+  outline: 3px solid rgba(255, 235, 159, 0.9);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cta-button,
+  .cta-button i,
+  .cta-button::before {
+    transition-duration: 0.01ms;
+  }
 }
 
 @media (max-width: 768px) {
