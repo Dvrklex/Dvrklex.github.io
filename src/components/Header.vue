@@ -11,9 +11,10 @@ onMounted(() => {
     typedInstance = new Typed(typedTarget.value, {
       strings: [
         'Arquitectura Backend',
-        'Ingeniería Fullstack',
+        'Ingeniería de Software',
         'Sistemas en Tiempo Real',
         'Diseño y Desarrollo de Web',
+        'IA Generativa y RAG'
       ],
       typeSpeed: 60,
       backSpeed: 40,
@@ -97,8 +98,8 @@ onBeforeUnmount(() => {
 
         <!-- Skills badges -->
         <div class="skills-badges">
-          <span class="badge">Backend Python</span>
-          <span class="badge">Vue 3</span>
+          <span class="badge">Full Stack Developer</span>
+          <span class="badge">Administrador de Base de Datos</span>
           <span class="badge">Sistemas en Tiempo Real</span>
         </div>
 

@@ -153,7 +153,7 @@ const projects = [
   {
     title: 'Default Bit',
     description: 'Herramienta de dibujo retro basada en la web enfocada en simplificar los primeros pasos en el pixel art. Incluye un lienzo interactivo de resolución acotada, 9 modos de trazo con soporte geométrico, gestión estructural de capas y un conversor de imágenes a mapa de bits. Cuenta con persistencia local automática e internacionalización bilingüe.',
-    technologies: ['Vue.js 3', 'Vite', 'Google Apps Script', 'Google Sheets', 'Vercel'],
+    technologies: ['Vue.js 3', 'Vite', 'Google Apps Script', 'Google Sheets', 'Vercel', 'GitHub', 'SEO', 'i18n'],
     image: '/projects/default-bit-preview.png', 
     demo: 'https://www.defaultbit.art/', 
     repo: null,
@@ -164,7 +164,7 @@ const projects = [
   {
     title: 'Portfolio',
     description: 'SPA responsiva desarrollada con Vue.js 3, enfocada en la optimización de componentes, animaciones fluidas con AOS y despliegue automatizado mediante GitHub Pages.',
-    technologies: ['Vue.js', 'JavaScript', 'Github'],
+    technologies: ['Vue.js', 'JavaScript', 'GitHub', 'AOS', 'GitHub Actions', 'SEO'],
     image: '/projects/dvrklex-project.png',
     demo: 'https://dvrklex.github.io/',
     repo: 'https://github.com/Dvrklex/Dvrklex.github.io',
@@ -186,7 +186,7 @@ const projects = [
   {
     title: 'RedPhone - Rio Cuarto',
     description: 'Sitio web para cliente (tienda/local) orientado a convertir visitas en consultas por WhatsApp. Incluye catálogo actualizado desde Google Sheets, diseño mobile-first y configuración completa de dominio y DNS. Deploy en Vercel con flujo de trabajo en GitHub.',
-    technologies: ['Vue.js 3', 'Vite', 'Vercel', 'GitHub', 'Google Sheets'],
+    technologies: ['Vue.js 3', 'Vite', 'Vercel', 'GitHub', 'Google Sheets', 'SEO', 'Google Apps Script', 'Google Sheets'],
     image: '/projects/redphone.png',
     demo: 'https://redphonerc.com/',
     repo: null,

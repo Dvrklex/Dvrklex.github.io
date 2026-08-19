@@ -109,7 +109,10 @@ const sections = [
       { name: 'Docker', icon: 'fab fa-docker' },
       { name: 'AWS S3', icon: 'fab fa-aws' },
       { name: 'Hosting & Deployments', icon: 'fas fa-cloud' },
-      { name: 'CI/CD (GitLab CI)', icon: 'fas fa-code-branch' }
+      { name: 'CI/CD (GitLab CI)', icon: 'fas fa-code-branch' },
+      { name: 'Vercel', icon: 'fas fa-rocket' },
+      { name: 'Render', icon: 'fas fa-server' },
+      { name: 'GitHub Actions', icon: 'fas fa-code-branch' }
     ]
   },
   {
