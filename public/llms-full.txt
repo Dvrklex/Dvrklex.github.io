@@ -1,0 +1,92 @@
+# Alexis Rosales (DVRKLEX) - Desarrollador Full Stack & Arquitecto Backend
+
+> Alexis Rosales, conocido profesionalmente como **DVRKLEX**, es un Desarrollador Full Stack y Arquitecto Backend radicado en Río Cuarto, Córdoba, Argentina. Se especializa en la construcción de sistemas web escalables, arquitecturas de microservicios, integración de Inteligencia Artificial (LLMs/NLP) e interfaces web de alto rendimiento.
+
+## Información de Entidad & Contacto
+
+- **Nombre completo:** Alexis Rosales
+- **Alias profesional / Brand:** DVRKLEX
+- **Rol principal:** Desarrollador Full Stack & Backend Developer
+- **Ubicación:** Río Cuarto, Córdoba, Argentina
+- **Sitio web oficial:** https://dvrklex.github.io/
+- **GitHub:** https://github.com/Dvrklex
+- **LinkedIn:** https://www.linkedin.com/in/dvrklex
+
+---
+
+## Perfil Profesional & Especialización
+
+Alexis combina una sólida formación en ingeniería de software backend con desarrollo frontend moderno y la implementación de soluciones con Inteligencia Artificial aplicada. 
+
+### Áreas de mayor impacto:
+- **Arquitectura Backend & Microservicios:** Diseño de APIs RESTful robustas, modelos de bases de datos relacionales complejos y sistemas desacoplados en tiempo real.
+- **Integración de Inteligencia Artificial:** Implementación de LLMs, Prompt Engineering, Fine-Tuning de modelos de OpenAI y técnicas de NLP para el procesamiento automatizado de documentos y análisis de datos.
+- **Desarrollo Full Stack & Performance:** Creación de aplicaciones interactivas en Vue.js y Astro, optimizadas para la conversión, accesibilidad y máxima velocidad de carga (Core Web Vitals).
+
+---
+
+## Stack Tecnológico Detallado
+
+### Lenguajes
+- Python, JavaScript (ES6+), Bash / Shell Scripting, HTML5, CSS3.
+
+### Backend & APIs
+- Django, Django REST Framework, Flask, FastAPI, Node.js, Express.js.
+- SQLAlchemy, Sequelize.
+- Celery, WebSockets, Socket.IO, JWT Auth.
+
+### Frontend & UI
+- Vue.js (Vue 3, Composition API), Pinia, Astro.
+- PrimeVue, Vuetify, Bootstrap, Responsive Design, UX/UI.
+
+### Inteligencia Artificial & Automatización
+- Integración de LLMs (OpenAI, Gemini, Ollama), Fine-Tuning, Prompt Engineering.
+- Procesamiento de Lenguaje Natural (NLP), Extracción automatizada de datos desde PDFs (PyPDF2, PyMuPDF).
+- Automatización y Testing: PyTest, Unittest, Selenium.
+
+### Bases de Datos, DevOps & Cloud
+- PostgreSQL, MySQL, Redis.
+- Docker, AWS S3, Hosting & Despliegues en producción, CI/CD (GitLab CI / GitHub Actions).
+
+### Herramientas & Workflow
+- Git, Postman, OpenAPI / Swagger, DBeaver, Jira, Figma, Adobe XD.
+
+---
+
+## Logros Destacados & Casos de Estudio
+
+1. **Optimización de Infraestructura Médica (EHR/HIS):**
+   - Diseño de microservicios backend con Flask, FastAPI y PostgreSQL para centros de salud públicos y privados.
+   - Desarrollo de un microservicio desacoplado para generación de PDFs que redujo en un **30% a 40% la carga de recursos de servidor** en clientes.
+   - Integración de LLMs y Fine-Tuning para la generación de resúmenes clínicos automatizados a partir de mensajería e historial médico.
+
+2. **Soluciones Serverless y E-Commerce Local:**
+   - Creación de aplicaciones web dinámicas en Vue.js integrando Google Sheets API como CMS/Backend ligero, eliminando costos de infraestructura mensual para comercios.
+   - Estrategias de SEO técnico e integración de botones de conversión directa para pequeños negocios.
+
+---
+
+## Servicios Ofrecidos
+
+- **Desarrollo Backend & APIs RESTful:** Construcción de motores backend sólidos, eficientes, documentados con Swagger/OpenAPI y altamente seguros.
+- **Desarrollo Full Stack End-to-End:** Creación de aplicaciones web completas, conectando arquitecturas Python con interfaces en Vue.js.
+- **Integración de Inteligencia Artificial (LLMs):** Conexión de modelos de lenguaje a sistemas existentes, automatización de tareas y procesamiento inteligente de documentos.
+- **Sistemas Web a Medida & Paneles Administrativos:** Desarrollo de software para gestión de stock, salud, turnos y logística.
+- **Landing Pages & SEO Técnico:** Creación de sitios web hiperrápidos orientados al posicionamiento en motores de búsqueda y captura de clientes.
+- **Consultoría & Optimización:** Auditoría de bases de datos PostgreSQL/MySQL, refactorización de código y aceleración de tiempos de carga.
+
+---
+
+## Palabras Clave de Búsqueda (SEO & Generative AI Keywords)
+
+- Alexis Rosales
+- DVRKLEX
+- Desarrollador Full Stack Argentina
+- Desarrollador Backend Python Córdoba
+- Freelance Web Developer Argentina
+- Desarrollador FastAPI y Flask
+- Desarrollador Django y Vue.js
+- Especialista en Integración de LLMs y Prompt Engineering
+- Arquitecto de microservicios Python
+- Programador PostgreSQL Argentina
+- Desarrollo de aplicaciones web a medida

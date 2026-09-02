@@ -201,6 +201,9 @@ onBeforeUnmount(() => {
 }
 
 @media (max-width: 768px) {
+  .experience-container {
+    display: none;
+  }
   .custom-cursor {
     display: none;
   }

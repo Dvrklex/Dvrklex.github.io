@@ -41,7 +41,7 @@ let removeNavbarScrollListener = null
 onMounted(() => {
   setTimeout(() => {
     showLoader.value = false
-  }, 2600)
+  }, 1500)
 
   const header = document.querySelector('.hero')
   if (header) {

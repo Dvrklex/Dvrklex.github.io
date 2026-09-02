@@ -71,12 +71,13 @@
                 target="_blank" 
                 rel="noopener" 
                 class="btn-demo-sm"
+                :aria-label="`Ver demo de ${item.title}`"
               >
                 <span>Ver Demo</span>
                 <i class="fa-solid fa-arrow-up-right-from-square"></i>
               </a>
 
-              <button class="btn-contact-sm" @click="scrollToContact">
+              <button class="btn-contact-sm" @click="scrollToContact" :aria-label="`Solicitar una solución similar a ${item.title}`">
                 Quiero una igual
               </button>
             </div>
