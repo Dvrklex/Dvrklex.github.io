@@ -184,6 +184,17 @@ const projects = [
     type: 'personal'
   },
   {
+    title: 'Global Paint Argentina',
+    description: 'Sitio web institucional para una empresa especializada en pintura, reformas integrales, construcción en seco, mantenimiento edilicio y acabados profesionales. Desarrollado con una arquitectura híbrida de Astro y Vue.js 3, priorizando rendimiento, SEO técnico, diseño responsive y generación de consultas mediante WhatsApp.',
+    technologies: ['Astro', 'Vue.js 3', 'JavaScript', 'CSS', 'SEO', 'GEO', 'Sitemap', 'Vite'],
+    image: '/projects/global-paint-preview.webp',
+    demo: null,
+    repo: null,
+    date: '2026',
+    status: 'Finished',
+    type: 'client'
+  },
+  {
     title: 'RedPhone - Rio Cuarto',
     description: 'Sitio web para cliente (tienda/local) orientado a convertir visitas en consultas por WhatsApp. Incluye catálogo actualizado desde Google Sheets, diseño mobile-first y configuración completa de dominio y DNS. Deploy en Vercel con flujo de trabajo en GitHub.',
     technologies: ['Vue.js 3', 'Vite', 'Vercel', 'GitHub', 'Google Sheets', 'SEO', 'Google Apps Script', 'Google Sheets'],
