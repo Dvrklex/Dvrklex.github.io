@@ -188,7 +188,7 @@ const projects = [
     description: 'Sitio web institucional para una empresa especializada en pintura, reformas integrales, construcción en seco, mantenimiento edilicio y acabados profesionales. Desarrollado con una arquitectura híbrida de Astro y Vue.js 3, priorizando rendimiento, SEO técnico, diseño responsive y generación de consultas mediante WhatsApp.',
     technologies: ['Astro', 'Vue.js 3', 'JavaScript', 'CSS', 'SEO', 'GEO', 'Sitemap', 'Vite'],
     image: '/projects/global-paint-preview.webp',
-    demo: null,
+    demo: 'https://globalpaint.com.ar/',
     repo: null,
     date: '2026',
     status: 'Finished',
